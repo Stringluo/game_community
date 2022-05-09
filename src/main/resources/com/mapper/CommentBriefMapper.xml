@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CommentBriefMapper">
+    <resultMap id="resultCommentBrief" type="com.pojo.wrapper.CommentBrief">
+        <result property="commentId" column="comment_id"/>
+        <result property="commentContent" column="comment_content"/>
+        <result property="commentCreateTime" column="comment_create_time"/>
+        <result property="commentLikesNum" column="comment_likes_num"/>
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="userImgUrl" column="user_img_url"/>
+        <collection property="commentBriefs" ofType="com.pojo.wrapper.CommentBrief">
+            <result property="commentId" column="children_comment_id"/>
+            <result property="commentCreateTime" column="children_comment_create_time"/>
+            <result property="commentContent" column="children_comment_content"/>
+            <result property="commentLikesNum" column="children_comment_likes_num"/>
+            <result property="userId" column="children_user_id"/>
+            <result property="userName" column="children_user_name"/>
+            <result property="userImgUrl" column="children_user_img_url"/>
+            <result property="commentRootParentId" column="comment_root_parent_id"/>
+            <result property="commentParentId" column="comment_parent_id"/>
+        </collection>
+    </resultMap>
+    <select id="selectCommentBriefByPage" resultMap="resultCommentBrief">
+        select t1.comment_id,
+               t1.comment_content,
+               t1.comment_create_time,
+               t1.comment_likes_num,
+               t2.user_id,
+               t2.user_name,
+               t2.user_img_url,
+               t5.*
+        from (select *
+              from tb_comment
+              where post_id = #{postId}
+                and comment_root_parent_id is null
+              order by comment_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2 on t1.user_id = t2.user_id
+                 left join
+             (select t3.comment_id          children_comment_id,
+                     t3.comment_content     children_comment_content,
+                     t3.comment_create_time children_comment_create_time,
+                     t3.comment_likes_num   children_comment_likes_num,
+                     t3.comment_root_parent_id,
+                     t3.comment_parent_id,
+                     t4.user_id             children_user_id,
+                     t4.user_name           children_user_name,
+                     t4.user_img_url        children_user_img_url
+              from tb_comment t3
+                       left join tb_user t4 on t3.user_id = t4.user_id
+              order by t3.comment_create_time desc) t5
+             on t5.comment_root_parent_id = t1.comment_id;
+    </select>
+</mapper>

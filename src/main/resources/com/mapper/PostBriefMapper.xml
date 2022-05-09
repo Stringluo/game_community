@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.PostBriefMapper">
+    <resultMap id="postBrief" type="com.pojo.wrapper.PostBrief">
+        <id property="postId" column="post_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="partitionId" column="partition_id"/>
+        <result property="postAbbreviation" column="post_abbreviation"/>
+        <result property="postTitle" column="post_title"/>
+        <result property="postLooksNum" column="post_looks_num"/>
+        <result property="postLikesNum" column="post_likes_num"/>
+        <result property="postCommentsNum" column="post_comments_num"/>
+        <result property="postCreateTime" column="post_create_time"/>
+        <result property="userName" column="user_name"/>
+        <result property="userImgUrl" column="user_img_url"/>
+        <collection property="postImgUrls" ofType="String">
+            <result column="post_img_url"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectPostBriefByPage" resultMap="postBrief">
+        select t2.user_id,
+               t2.user_img_url,
+               t2.user_name,
+               t1.post_id,
+               t1.post_title,
+               t1.post_abbreviation,
+               t1.post_likes_num,
+               t1.post_looks_num,
+               t1.post_comments_num,
+               t1.post_create_time,
+               t1.partition_id,
+               t3.post_img_url
+        from (select * from tb_post order by post_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2
+                           on t1.user_id = t2.user_id
+                 left join tb_post_img t3
+                           on t1.post_id = t3.post_id;
+    </select>
+    <select id="selectPostBriefByPagePartition" resultMap="postBrief">
+        select t2.user_id,
+               t2.user_img_url,
+               t2.user_name,
+               t1.post_id,
+               t1.post_title,
+               t1.post_abbreviation,
+               t1.post_likes_num,
+               t1.post_looks_num,
+               t1.post_comments_num,
+               t1.post_create_time,
+               t1.partition_id,
+               t3.post_img_url
+        from (select *
+              from tb_post
+              where partition_id = #{partitionId}
+              order by post_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2
+                           on t1.user_id = t2.user_id
+                 left join tb_post_img t3
+                           on t1.post_id = t3.post_id;
+    </select>
+    <select id="selectPostBriefByPageUser" resultMap="postBrief">
+        select t2.user_id,
+               t2.user_img_url,
+               t2.user_name,
+               t1.post_id,
+               t1.post_title,
+               t1.post_abbreviation,
+               t1.post_likes_num,
+               t1.post_looks_num,
+               t1.post_comments_num,
+               t1.post_create_time,
+               t1.partition_id,
+               t3.post_img_url
+        from (select *
+              from tb_post
+              where user_id = #{userId}
+              order by post_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2
+                           on t1.user_id = t2.user_id
+                 left join tb_post_img t3
+                           on t1.post_id = t3.post_id;
+    </select>
+    <select id="selectSearchPostBriefByPage" resultMap="postBrief">
+        select t2.user_id,
+               t2.user_img_url,
+               t2.user_name,
+               t1.post_id,
+               t1.post_title,
+               t1.post_abbreviation,
+               t1.post_likes_num,
+               t1.post_looks_num,
+               t1.post_comments_num,
+               t1.post_create_time,
+               t1.partition_id,
+               t3.post_img_url
+        from (select * from tb_post where post_title like concat('%',#{searchParam},'%') order by post_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2
+                           on t1.user_id = t2.user_id
+                 left join tb_post_img t3
+                           on t1.post_id = t3.post_id;
+    </select>
+    <select id="selectSearchPostBriefByPagePartition" resultMap="postBrief">
+        select t2.user_id,
+               t2.user_img_url,
+               t2.user_name,
+               t1.post_id,
+               t1.post_title,
+               t1.post_abbreviation,
+               t1.post_likes_num,
+               t1.post_looks_num,
+               t1.post_comments_num,
+               t1.post_create_time,
+               t1.partition_id,
+               t3.post_img_url
+        from (select *
+              from tb_post
+              where partition_id = #{partitionId}
+              and post_title like concat('%',#{searchParam},'%')
+              order by post_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2
+                           on t1.user_id = t2.user_id
+                 left join tb_post_img t3
+                           on t1.post_id = t3.post_id;
+    </select>
+    <select id="selectSearchPostBriefByPageUser" resultMap="postBrief">
+        select t2.user_id,
+               t2.user_img_url,
+               t2.user_name,
+               t1.post_id,
+               t1.post_title,
+               t1.post_abbreviation,
+               t1.post_likes_num,
+               t1.post_looks_num,
+               t1.post_comments_num,
+               t1.post_create_time,
+               t1.partition_id,
+               t3.post_img_url
+        from (select *
+              from tb_post
+              where user_id = #{userId}
+              and post_title like concat('%',#{searchParam},'%')
+              order by post_create_time desc limit #{start}, #{size}) t1
+                 left join tb_user t2
+                           on t1.user_id = t2.user_id
+                 left join tb_post_img t3
+                           on t1.post_id = t3.post_id;
+    </select>
+</mapper>
