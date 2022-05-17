@@ -1,6 +1,5 @@
 package com.controller;
 
-import com.pojo.wrapper.ImgFlag;
 import com.pojo.wrapper.UserCode;
 import com.pojo.wrapper.RtnData;
 import com.pojo.User;
@@ -10,14 +9,11 @@ import com.service.UserService;
 import com.utils.AjaxUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
@@ -183,7 +179,6 @@ public class UserController {
                 trueData++;
             }
         }
-        System.out.println(user);
         if(trueData==2){
             // 根据密码登录
             User loginUser = userService.loginByPassword(user);

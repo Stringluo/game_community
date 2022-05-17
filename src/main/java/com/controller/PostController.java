@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,20 +64,7 @@ public class PostController {
                 return rtnData;
             }*/
             if (postService.releasePost(post)) {
-                if (imgPost.getImgUrls().size() > 0) {
-                    List<com.pojo.PostImg> postImgList = new ArrayList<>();
-                    for (ImgFlag imgFlag : imgPost.getImgUrls()) {
-                        if (imgFlag.getFlag()) {
-                            com.pojo.PostImg postImg = new com.pojo.PostImg();
-                            postImg.setPostId(post.getPostId());
-                            postImg.setPostImgUrl(imgFlag.getUrl());
-                            postImgList.add(postImg);
-                        }
-                    }
-                    if (postImgList.size() > 0) {
-                        postImgService.insertPostImg(postImgList);
-                    }
-                }
+                this.saveImg(imgPost, post);
                 rtnData.setFlag(true);
                 rtnData.setData(true);
                 postService.deleteOtherImg(imgPost.getImgUrls());
@@ -85,6 +73,29 @@ public class PostController {
         }
         rtnData.setFlag(false);
         rtnData.setMsg("发布失败!");
+        return rtnData;
+    }
+
+    @PostMapping("/editPost")
+    public RtnData editPost(@RequestBody PostImg imgPost, HttpSession session) {
+        RtnData rtnData = new RtnData();
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser != null && loginUser.getUserId() != null) {
+            Post post = new Post();
+            post.setPostId(imgPost.getPostId());
+            post.setPartitionId(imgPost.getPartitionId());
+            post.setPostArticle(imgPost.getPostArticle());
+            post.setPostAbbreviation(imgPost.getPostAbbreviation());
+            post.setPostTitle(imgPost.getPostTitle());
+            post.setUserId(loginUser.getUserId());
+            if (postService.editPost(post)) {
+                this.saveImg(imgPost, post);
+                rtnData.setFlag(true);
+                rtnData.setData(true);
+                postService.deleteOtherImg(imgPost.getImgUrls());
+                return rtnData;
+            }
+        }
         return rtnData;
     }
 
@@ -124,6 +135,40 @@ public class PostController {
         rtnData.setFlag(true);
         rtnData.setData(true);
         return rtnData;
+    }
+
+    @DeleteMapping("/deletePost/{postId}")
+    public RtnData deletePostById(@PathVariable("postId") Integer postId, HttpSession session) {
+        RtnData rtnData = new RtnData();
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser != null && loginUser.getUserId() != null) {
+            if (postService.deletePostById(postId, loginUser.getUserId())) {
+                //删除成功
+                rtnData.setFlag(true);
+                rtnData.setData(true);
+                return rtnData;
+            }
+        }
+        rtnData.setFlag(false);
+        rtnData.setMsg("删除失败");
+        return rtnData;
+    }
+
+    private void saveImg(PostImg imgPost, Post post) {
+        if (imgPost.getImgUrls().size() > 0) {
+            List<com.pojo.PostImg> postImgList = new ArrayList<>();
+            for (ImgFlag imgFlag : imgPost.getImgUrls()) {
+                if (imgFlag.getFlag()) {
+                    com.pojo.PostImg postImg = new com.pojo.PostImg();
+                    postImg.setPostId(post.getPostId());
+                    postImg.setPostImgUrl(imgFlag.getUrl());
+                    postImgList.add(postImg);
+                }
+            }
+            if (postImgList.size() > 0) {
+                postImgService.insertPostImg(postImgList);
+            }
+        }
     }
 
 }

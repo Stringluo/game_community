@@ -120,6 +120,21 @@ public class ShowController {
         return rtnData;
     }
 
+    @GetMapping("/getPost/{id}")
+    public RtnData getPost(@PathVariable("id") Integer postId) {
+        RtnData rtnData = new RtnData();
+        Post post = postService.getPostById(postId);
+        if (post != null && post.getUserId() != null) {
+            //查询到帖子数据
+            rtnData.setFlag(true);
+            rtnData.setData(post);
+            return rtnData;
+        }
+        rtnData.setFlag(false);
+        rtnData.setMsg("未查询到该帖子数据");
+        return rtnData;
+    }
+
     /**
      * 获取用户信息
      *

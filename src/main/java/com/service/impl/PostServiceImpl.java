@@ -2,20 +2,20 @@ package com.service.impl;
 
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.CreateCache;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.mapper.PostImgMapper;
-import com.mapper.PostMapper;
-import com.pojo.Post;
-import com.pojo.PostImg;
+import com.mapper.*;
+import com.pojo.*;
 import com.pojo.wrapper.ImgFlag;
 import com.pojo.wrapper.PostPage;
 import com.service.PostService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -31,14 +31,20 @@ public class PostServiceImpl implements PostService {
     private final String ROOT_BASE_URL = "E:\\02-javaStu\\Game_Community\\game_community_java\\src\\main\\resources\\static\\";
     private final PostMapper postMapper;
     private final PostImgMapper postImgMapper;
+    private final CommentMapper commentMapper;
+    private final ActionMapper actionMapper;
+    private final ReportingMapper reportingMapper;
 
     @CreateCache(name = "officialPostCache_", expire = 1, timeUnit = TimeUnit.DAYS)
     private Cache<String, List<PostImg>> officialPostCache;
 
     @Autowired
-    public PostServiceImpl(PostMapper postMapper, PostImgMapper postImgMapper) {
+    public PostServiceImpl(PostMapper postMapper, PostImgMapper postImgMapper, CommentMapper commentMapper, ActionMapper actionMapper, ReportingMapper reportingMapper) {
         this.postMapper = postMapper;
         this.postImgMapper = postImgMapper;
+        this.commentMapper = commentMapper;
+        this.actionMapper = actionMapper;
+        this.reportingMapper = reportingMapper;
     }
 
     @Override
@@ -50,6 +56,15 @@ public class PostServiceImpl implements PostService {
         post.setPostCreateTime(LocalDateTime.now());
         post.setPostEditTime(post.getPostCreateTime());
         return postMapper.insert(post) == 1;
+    }
+
+    @Override
+    public Boolean editPost(Post post) {
+        post.setPostEditTime(LocalDateTime.now());
+        LambdaUpdateWrapper<Post> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(Post::getPostId, post.getPostId());
+        updateWrapper.eq(Post::getUserId, post.getUserId());
+        return postMapper.update(post, updateWrapper) == 1;
     }
 
     @Override
@@ -150,6 +165,75 @@ public class PostServiceImpl implements PostService {
         updateWrapper.eq(Post::getPostId, postId);
         updateWrapper.setSql("post_collections_num = post_collections_num - 1");
         return postMapper.update(null, updateWrapper) == 1;
+    }
+
+    @Transactional
+    @Override
+    public Boolean deletePostById(Integer postId, Integer userId) {
+        LambdaQueryWrapper<Post> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Post::getPostId, postId);
+        queryWrapper.eq(Post::getUserId, userId);
+        if (postMapper.selectList(queryWrapper).size() == 1) {
+            //查询到属于一登陆用户的帖子，可以删除
+            //删除相关的action、comment、comment相关的action、postImg、reporting
+            //1.删除comment及其action
+            //1.1查询所有评论
+            LambdaQueryWrapper<Comment> commentLambdaQueryWrapper = new LambdaQueryWrapper<>();
+            commentLambdaQueryWrapper.eq(Comment::getPostId, postId);
+            List<Comment> comments = commentMapper.selectList(commentLambdaQueryWrapper);
+            if (comments != null && comments.size() > 0) {
+                //1.2删除其相关action和reporting
+                for (Comment comment : comments) {
+                    LambdaQueryWrapper<Action> actionLambdaQueryWrapper = new LambdaQueryWrapper<>();
+                    actionLambdaQueryWrapper.eq(Action::getCommentId, comment.getCommentId());
+                    actionMapper.delete(actionLambdaQueryWrapper);
+                    LambdaQueryWrapper<Reporting> reportingLambdaQueryWrapper = new LambdaQueryWrapper<>();
+                    reportingLambdaQueryWrapper.eq(Reporting::getCommentId, comment.getCommentId());
+                    reportingMapper.delete(reportingLambdaQueryWrapper);
+                }
+                //1.3删除具有父级且父级不为根级的comment
+                for (Comment comment : comments) {
+                    if (postId.equals(comment.getPostId())
+                            && comment.getCommentParentId() != null
+                            && !"".equals(comment.getCommentParentId())
+                            && comment.getCommentRootParentId() != null
+                            && !comment.getCommentParentId().equals(comment.getCommentRootParentId())) {
+                        if (commentMapper.deleteById(comment) == 1) {
+                            comments.remove(comment);
+                        }
+                    }
+                }
+                //1.4删除具有父级的comment
+                for (Comment comment : comments) {
+                    if (postId.equals(comment.getPostId())
+                            && comment.getCommentParentId() != null
+                            && !"".equals(comment.getCommentParentId())) {
+                        if (commentMapper.deleteById(comment) == 1) {
+                            comments.remove(comment);
+                        }
+                    }
+                }
+                //1.5删除剩余的comment
+                for (Comment comment : comments) {
+                    if (commentMapper.deleteById(comment) == 1) {
+                        comments.remove(comment);
+                    }
+                }
+            }
+            //1.2删除action
+            LambdaQueryWrapper<Action> actionLambdaQueryWrapper = new LambdaQueryWrapper<>();
+            actionLambdaQueryWrapper.eq(Action::getPostId, postId);
+            actionMapper.delete(actionLambdaQueryWrapper);
+            //1.3删除postImg
+            LambdaQueryWrapper<PostImg> postImgLambdaQueryWrapper = new LambdaQueryWrapper<>();
+            postImgLambdaQueryWrapper.eq(PostImg::getPostId, postId);
+            postImgMapper.delete(postImgLambdaQueryWrapper);
+            //1.4删除reporting
+            LambdaQueryWrapper<Reporting> reportingLambdaQueryWrapper = new LambdaQueryWrapper<>();
+            reportingLambdaQueryWrapper.eq(Reporting::getPostId, postId);
+            reportingMapper.delete(reportingLambdaQueryWrapper);
+        }
+        return postMapper.delete(queryWrapper) == 1;
     }
 
     private void setOfficialPostCache() {

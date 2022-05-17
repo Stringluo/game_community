@@ -8,6 +8,7 @@ import java.util.List;
 @Data
 @ToString
 public class PostImg {
+    private Integer postId;
     private String postTitle;
     private String postArticle;
     private String postAbbreviation;

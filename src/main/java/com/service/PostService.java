@@ -12,6 +12,8 @@ public interface PostService {
 
     Boolean releasePost(Post post);
 
+    Boolean editPost(Post post);
+
     String uploadImg(MultipartFile file) throws Exception;
 
     void deleteOtherImg(List<ImgFlag> imgFlags);
@@ -29,4 +31,6 @@ public interface PostService {
     Boolean collectionPost(Integer postId);
 
     Boolean cancelCollectionPost(Integer postId);
+
+    Boolean deletePostById(Integer postId, Integer userId);
 }
