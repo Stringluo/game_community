@@ -120,6 +120,12 @@ public class ShowController {
         return rtnData;
     }
 
+    /**
+     * 获取帖子简要数据，编辑使用
+     *
+     * @param postId 帖子id
+     * @return 返回帖子数据
+     */
     @GetMapping("/getPost/{id}")
     public RtnData getPost(@PathVariable("id") Integer postId) {
         RtnData rtnData = new RtnData();
