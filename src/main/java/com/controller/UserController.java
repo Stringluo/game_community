@@ -194,4 +194,27 @@ public class UserController {
         rtnData.setFlag(false);
         return rtnData;
     }
+
+    /**
+     * 修改用户密码
+     *
+     * @param userCode mail:邮箱,code:验证码
+     * @return 返回是否修改成功
+     */
+    @PostMapping("/changePassword")
+    public RtnData changePassword(@RequestBody UserCode userCode) {
+        RtnData rtnData = new RtnData();
+        if (userService.verifyCode(userCode)) {
+            //验证成功，可以修改密码
+            if (userService.changePassword(userCode)) {
+                //修改成功
+                rtnData.setFlag(true);
+                rtnData.setData(true);
+                return rtnData;
+            }
+        }
+        rtnData.setFlag(false);
+        rtnData.setMsg("修改密码失败");
+        return rtnData;
+    }
 }

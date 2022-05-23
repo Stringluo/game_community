@@ -18,6 +18,7 @@ public class User {
     private Integer userFansNum;
     private Integer userFocusNum;
     private Integer userLikesNum;
+    private Integer userRole;
     @TableField(exist = false)
     private Boolean likeFlag = false;
 }

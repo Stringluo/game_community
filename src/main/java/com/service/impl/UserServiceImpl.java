@@ -10,13 +10,14 @@ import com.mapper.PostMapper;
 import com.mapper.UserMapper;
 import com.pojo.Comment;
 import com.pojo.Post;
-import com.pojo.wrapper.CommentBrief;
+import com.pojo.cache.VCodeCache;
 import com.pojo.wrapper.UserCode;
 import com.pojo.User;
 import com.service.UserService;
 import com.utils.RandomUtil;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,8 +29,9 @@ import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final String STATIC_BASE_URL = "E:\\02-javaStu\\Game_Community\\game_community_java\\target\\classes\\static\\";
-    private final String ROOT_BASE_URL = "E:\\02-javaStu\\Game_Community\\game_community_java\\src\\main\\resources\\static\\";
+
+    @Value("${static.base-dir}")
+    private String STATIC_BASE_URL;
 
     @CreateCache(name = "vCodeCache_", expire = 300)
     private Cache<String, String> vCodeCache;
@@ -106,20 +108,35 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean register(UserCode userCode) {
+        //验证码正确，可以注册
+        User user = new User();
         if (userCode.getCode().equals(vCodeCache.get(userCode.getMail() + "register"))) {
-            //验证码正确，可以注册
-            User user = new User();
-            user.setUserName("旅行者");
-            user.setUserImgUrl("img/avatar/official/defaultUserAvatar.png");
-            user.setUserMail(userCode.getMail());
-            user.setUserPassword(userCode.getPassword());
-            user.setUserFansNum(0);
-            user.setUserFocusNum(0);
-            user.setUserLikesNum(0);
-            user.setUserSign("系统原装签名，送给每一位小可爱");
+            initUser(user, userCode);
+            user.setUserRole(1);//普通用户
+            return userMapper.insert(user) == 1;
+        }
+        if (userCode.getCode().equals(vCodeCache.get("officeRegister" + userCode.getCode()))) {
+            initUser(user, userCode);
+            user.setUserRole(0);//官方用户
+            return userMapper.insert(user) == 1;
+        }
+        if (userCode.getCode().equals(vCodeCache.get("universalRegister"))) {
+            initUser(user, userCode);
+            user.setUserRole(2);//测试用户
             return userMapper.insert(user) == 1;
         }
         return false;
+    }
+
+    private void initUser(User user, UserCode userCode) {
+        user.setUserName("旅行者");
+        user.setUserImgUrl("img/avatar/official/defaultUserAvatar.png");
+        user.setUserMail(userCode.getMail());
+        user.setUserPassword(userCode.getPassword());
+        user.setUserFansNum(0);
+        user.setUserFocusNum(0);
+        user.setUserLikesNum(0);
+        user.setUserSign("系统原装签名，送给每一位小可爱");
     }
 
     @Override
@@ -132,7 +149,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String uploadAvatar(MultipartFile file) throws Exception {
         // 图片存储路径
-        String path = ROOT_BASE_URL + "img\\avatar";
+        String path = STATIC_BASE_URL + "img/avatar";
         // 判断是否有路径
         if (!new File(path).exists()) {
             new File(path).mkdirs();
@@ -145,10 +162,6 @@ public class UserServiceImpl implements UserService {
             uploadAvatar(file);
         }
         file.transferTo(tempFile);
-        //手动编译
-        String targetPath = STATIC_BASE_URL + "img\\avatar";
-        File newFile = new File(targetPath, fileName);
-        FileUtils.copyFile(tempFile, newFile);
         return fileName;
     }
 
@@ -158,10 +171,6 @@ public class UserServiceImpl implements UserService {
             File img = new File(STATIC_BASE_URL + url);
             if (img.exists()) {
                 img.delete();
-            }
-            File imRoot = new File(ROOT_BASE_URL + url);
-            if (imRoot.exists()) {
-                imRoot.delete();
             }
         }
     }
@@ -201,6 +210,7 @@ public class UserServiceImpl implements UserService {
         updateWrapper.setSql("user_likes_num = user_likes_num - 1");
         return userMapper.update(null, updateWrapper) == 1;
     }
+
     @Override
     public Boolean likeUserComment(Integer commentId) {
         LambdaUpdateWrapper<User> updateWrapper = new LambdaUpdateWrapper<>();

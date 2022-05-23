@@ -64,4 +64,9 @@ mybatis-plus:
       table-prefix: tb_
       id-type: auto
 
-
+#配置属性
+static:
+  #wins静态文件位置
+  base-dir: "E:/02-javaStu/Game_Community/"
+  #linux静态文件位置
+  #base-dir: "/www/wwwroot/game_community/static/"

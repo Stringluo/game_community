@@ -72,7 +72,7 @@ public class ShowController {
             postBriefs = postBriefService.getPostBriefByPage(postPage);
         }
         User loginUser = (User) request.getSession().getAttribute("loginUser");
-        if (loginUser != null && loginUser.getUserId() != null) {
+        if (loginUser != null && loginUser.getUserId() != null && postBriefs.size() > 0) {
             //用户已经登陆，获取用户对帖子的操作
             actionService.setUserActionsByPost(postBriefs, loginUser.getUserId());
         }
@@ -186,10 +186,10 @@ public class ShowController {
     }
 
     /**
-     * 获取帖子页面
+     * 获取评论列表
      *
      * @param page 页面参数
-     * @return 返回帖子集合
+     * @return 返回评论集合
      */
     @PostMapping("/getCommentsByPage")
     public RtnData getCommentsByPage(@RequestBody PostPage page) {

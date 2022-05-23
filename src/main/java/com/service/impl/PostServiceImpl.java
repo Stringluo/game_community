@@ -14,6 +14,7 @@ import com.pojo.wrapper.PostPage;
 import com.service.PostService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,8 +28,9 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class PostServiceImpl implements PostService {
-    private final String STATIC_BASE_URL = "E:\\02-javaStu\\Game_Community\\game_community_java\\target\\classes\\static\\";
-    private final String ROOT_BASE_URL = "E:\\02-javaStu\\Game_Community\\game_community_java\\src\\main\\resources\\static\\";
+
+    @Value("${static.base-dir}")
+    private String STATIC_BASE_URL;
     private final PostMapper postMapper;
     private final PostImgMapper postImgMapper;
     private final CommentMapper commentMapper;
@@ -70,7 +72,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public String uploadImg(MultipartFile file) throws Exception {
         // 图片存储路径
-        String path = ROOT_BASE_URL + "img\\postImg";
+        String path = STATIC_BASE_URL + "img/postImg";
         // 判断是否有路径
         if (!new File(path).exists()) {
             new File(path).mkdirs();
@@ -83,10 +85,6 @@ public class PostServiceImpl implements PostService {
             uploadImg(file);
         }
         file.transferTo(tempFile);
-        //手动编译
-        String targetPath = STATIC_BASE_URL + "img\\postImg";
-        File newFile = new File(targetPath, fileName);
-        FileUtils.copyFile(tempFile, newFile);
         return fileName;
     }
 
@@ -97,10 +95,6 @@ public class PostServiceImpl implements PostService {
                 File img = new File(STATIC_BASE_URL + imgFlag.getUrl());
                 if (img.exists()) {
                     img.delete();
-                }
-                File imRoot = new File(ROOT_BASE_URL + imgFlag.getUrl());
-                if (imRoot.exists()) {
-                    imRoot.delete();
                 }
             }
         }
