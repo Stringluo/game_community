@@ -15,9 +15,14 @@ public interface PostBriefMapper {
 
     public List<PostBrief> selectPostBriefByPageUser(@Param("start") Integer start, @Param("size") Integer size, @Param("userId") Integer userId);
 
+    public List<PostBrief> selectPostBriefByPageConnectionUser(@Param("start") Integer start, @Param("size") Integer size, @Param("actionUserId") Integer actionUserId, @Param("actionCategoryId") Integer actionCategoryId);
+
     public List<PostBrief> selectSearchPostBriefByPage(@Param("start") Integer start, @Param("size") Integer size, @Param("searchParam") String searchParam);
 
     public List<PostBrief> selectSearchPostBriefByPagePartition(@Param("start") Integer start, @Param("size") Integer size, @Param("partitionId") Integer partitionId, @Param("searchParam") String searchParam);
 
     public List<PostBrief> selectSearchPostBriefByPageUser(@Param("start") Integer start, @Param("size") Integer size, @Param("userId") Integer userId, @Param("searchParam") String searchParam);
+
+    //public List<PostBrief> selectSearchPostBriefByPageConnectionUser(@Param("start") Integer start, @Param("size") Integer size, @Param("connectionUserId") Integer connectionUserId, @Param("searchParam") String searchParam);
+
 }

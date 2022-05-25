@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -204,4 +205,31 @@ public class ShowController {
         rtnData.setMsg("获取评论列表失败");
         return rtnData;
     }
+
+    @GetMapping("/getUserFocus/{userId}")
+    public RtnData getUserFocus(@PathVariable("userId") Integer userId, HttpSession session) {
+        RtnData rtnData = new RtnData();
+        List<User> users = userService.getUserFocus(userId);
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser != null && loginUser.getUserId() != null) {
+            userService.setUserLikeFlag(users, loginUser.getUserId());
+        }
+        rtnData.setFlag(true);
+        rtnData.setData(users);
+        return rtnData;
+    }
+
+    @GetMapping("/getUserFans/{userId}")
+    public RtnData getUserFans(@PathVariable("userId") Integer userId, HttpSession session) {
+        RtnData rtnData = new RtnData();
+        List<User> users = userService.getUserFans(userId);
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser != null && loginUser.getUserId() != null) {
+            userService.setUserLikeFlag(users, loginUser.getUserId());
+        }
+        rtnData.setFlag(true);
+        rtnData.setData(users);
+        return rtnData;
+    }
+
 }

@@ -8,6 +8,8 @@ public class PostPage {
     private Integer pageNum;
     private Integer postSum;
     private Integer userId;
+    private Integer actionUserId;
+    private Integer actionCategoryId;
     private Integer postId;
     private Integer commentSum;
     private Integer commentId;

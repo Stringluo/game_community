@@ -13,7 +13,7 @@ public interface UserService {
 
     Boolean isOneUserExist(User user);
 
-    String getCode(String mail,String type);
+    String getCode(String mail, String type);
 
     User loginByCode(UserCode userCode);
 
@@ -38,5 +38,11 @@ public interface UserService {
     Boolean likeUserComment(Integer commentId);
 
     Boolean cancelLikeUserComment(Integer commentId);
+
+    List<User> getUserFans(Integer userId);
+
+    List<User> getUserFocus(Integer userId);
+
+    void setUserLikeFlag(List<User> users,Integer userId);
 
 }

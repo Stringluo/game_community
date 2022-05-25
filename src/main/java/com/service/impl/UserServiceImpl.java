@@ -2,30 +2,28 @@ package com.service.impl;
 
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.CreateCache;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.mapper.CommentMapper;
+import com.mapper.FocusMapper;
 import com.mapper.PostMapper;
 import com.mapper.UserMapper;
 import com.pojo.Comment;
+import com.pojo.Focus;
 import com.pojo.Post;
-import com.pojo.cache.VCodeCache;
 import com.pojo.wrapper.UserCode;
 import com.pojo.User;
 import com.service.UserService;
 import com.utils.RandomUtil;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -39,12 +37,14 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final PostMapper postMapper;
     private final CommentMapper commentMapper;
+    private final FocusMapper focusMapper;
 
     @Autowired
-    public UserServiceImpl(UserMapper userMapper, PostMapper postMapper, CommentMapper commentMapper) {
+    public UserServiceImpl(UserMapper userMapper, PostMapper postMapper, CommentMapper commentMapper, FocusMapper focusMapper) {
         this.userMapper = userMapper;
         this.postMapper = postMapper;
         this.commentMapper = commentMapper;
+        this.focusMapper = focusMapper;
     }
 
     @Override
@@ -227,6 +227,55 @@ public class UserServiceImpl implements UserService {
         updateWrapper.eq(User::getUserId, comment.getUserId());
         updateWrapper.setSql("user_likes_num = user_likes_num - 1");
         return userMapper.update(null, updateWrapper) == 1;
+    }
+
+    @Override
+    public List<User> getUserFans(Integer userId) {
+        LambdaQueryWrapper<Focus> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Focus::getFocusUserId, userId);
+        queryWrapper.ne(Focus::getUserId, userId);
+        List<Focus> focusList = focusMapper.selectList(queryWrapper);
+        List<User> users = new ArrayList<>();
+        for (Focus focus : focusList) {
+            LambdaQueryWrapper<User> queryWrapper1 = new LambdaQueryWrapper<>();
+            queryWrapper1.eq(User::getUserId, focus.getUserId());
+            User user = userMapper.selectOne(queryWrapper1);
+            user.setUserPassword(null);
+            users.add(user);
+        }
+        return users;
+    }
+
+    @Override
+    public List<User> getUserFocus(Integer userId) {
+        LambdaQueryWrapper<Focus> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.ne(Focus::getFocusUserId, userId);
+        queryWrapper.eq(Focus::getUserId, userId);
+        List<Focus> focusList = focusMapper.selectList(queryWrapper);
+        List<User> users = new ArrayList<>();
+        for (Focus focus : focusList) {
+            LambdaQueryWrapper<User> queryWrapper1 = new LambdaQueryWrapper<>();
+            queryWrapper1.eq(User::getUserId, focus.getFocusUserId());
+            User user = userMapper.selectOne(queryWrapper1);
+            user.setUserPassword(null);
+            users.add(user);
+        }
+        return users;
+    }
+
+    @Override
+    public void setUserLikeFlag(List<User> users, Integer userId) {
+        if (users.size() > 0) {
+            for (User user : users) {
+                LambdaQueryWrapper<Focus> queryWrapper = new LambdaQueryWrapper<>();
+                queryWrapper.eq(Focus::getUserId, userId);
+                queryWrapper.eq(Focus::getFocusUserId, user.getUserId());
+                Focus focus = focusMapper.selectOne(queryWrapper);
+                if (focus != null && focus.getFocusId() != null) {
+                    user.setLikeFlag(true);
+                }
+            }
+        }
     }
 
 }

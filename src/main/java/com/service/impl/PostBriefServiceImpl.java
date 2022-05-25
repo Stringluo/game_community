@@ -29,6 +29,9 @@ public class PostBriefServiceImpl implements PostBriefService {
         if (postPage.getUserId() != null) {
             return postBriefMapper.selectPostBriefByPageUser(start, size, postPage.getUserId());
         }
+        if (postPage.getActionUserId() != null) {
+            return postBriefMapper.selectPostBriefByPageConnectionUser(start, size, postPage.getActionUserId(), postPage.getActionCategoryId());
+        }
         return postBriefMapper.selectPostBriefByPage(start, size);
     }
 
@@ -42,6 +45,10 @@ public class PostBriefServiceImpl implements PostBriefService {
         if (postPage.getUserId() != null) {
             return postBriefMapper.selectSearchPostBriefByPageUser(start, size, postPage.getUserId(), postPage.getSearchParam());
         }
+        /*
+        if (postPage.getConnectionUserId() != null) {
+            return postBriefMapper.selectSearchPostBriefByPageConnectionUser(start, size, postPage.getUserId(), postPage.getSearchParam());
+        }*/
         return postBriefMapper.selectSearchPostBriefByPage(start, size, postPage.getSearchParam());
     }
 }

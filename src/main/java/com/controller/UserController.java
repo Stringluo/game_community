@@ -131,7 +131,6 @@ public class UserController {
     @PostMapping("/doLoginByPassword")
     public RtnData doLoginByPassword(@RequestBody UserCode user, HttpServletRequest request, HttpServletResponse response) {
         RtnData rtnData = new RtnData();
-        System.out.println(user);
         // 根据密码登录
         User loginUser = userService.loginByPassword(user);
         if (loginUser != null) {
@@ -169,7 +168,6 @@ public class UserController {
         UserCode user = new UserCode();
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie:cookies){
-            System.out.println(cookie.getName()+cookie.getValue());
             if("userMail".equals(cookie.getName())){
                 user.setMail(cookie.getValue());
                 trueData++;
