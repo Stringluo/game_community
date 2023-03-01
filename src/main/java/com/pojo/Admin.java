@@ -8,7 +8,7 @@ public class Admin {
     @TableId
     private Integer adminId;
     private String adminCode;
-    private String adminName;
     private String adminPassword;
     private Integer adminState;
+    private Integer roleId;
 }

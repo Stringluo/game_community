@@ -1,5 +1,6 @@
 package com.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
@@ -11,6 +12,8 @@ public class Post {
     private Integer postId;
     private Integer partitionId;
     private Integer userId;
+    @TableField(exist = false)
+    private String userName;
     private String postTitle;
     private String postArticle;
     private String postAbbreviation;
@@ -20,4 +23,5 @@ public class Post {
     private Integer postCommentsNum;
     private LocalDateTime postCreateTime;
     private LocalDateTime postEditTime;
+    private Integer postState;
 }

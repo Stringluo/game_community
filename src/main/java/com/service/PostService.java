@@ -1,5 +1,6 @@
 package com.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.pojo.Post;
 import com.pojo.PostImg;
 import com.pojo.wrapper.ImgFlag;
@@ -33,4 +34,10 @@ public interface PostService {
     Boolean cancelCollectionPost(Integer postId);
 
     Boolean deletePostById(Integer postId, Integer userId);
+
+    IPage<Post> getReviewPostPage(IPage<Post> page);
+
+    Boolean passPost(Integer postId);
+
+    Boolean unPassPost(Integer postId);
 }

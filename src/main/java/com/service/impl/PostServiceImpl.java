@@ -12,7 +12,6 @@ import com.pojo.*;
 import com.pojo.wrapper.ImgFlag;
 import com.pojo.wrapper.PostPage;
 import com.service.PostService;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -36,17 +35,19 @@ public class PostServiceImpl implements PostService {
     private final CommentMapper commentMapper;
     private final ActionMapper actionMapper;
     private final ReportingMapper reportingMapper;
+    private final UserMapper userMapper;
 
     @CreateCache(name = "officialPostCache_", expire = 1, timeUnit = TimeUnit.DAYS)
     private Cache<String, List<PostImg>> officialPostCache;
 
     @Autowired
-    public PostServiceImpl(PostMapper postMapper, PostImgMapper postImgMapper, CommentMapper commentMapper, ActionMapper actionMapper, ReportingMapper reportingMapper) {
+    public PostServiceImpl(PostMapper postMapper, PostImgMapper postImgMapper, CommentMapper commentMapper, ActionMapper actionMapper, ReportingMapper reportingMapper, UserMapper userMapper) {
         this.postMapper = postMapper;
         this.postImgMapper = postImgMapper;
         this.commentMapper = commentMapper;
         this.actionMapper = actionMapper;
         this.reportingMapper = reportingMapper;
+        this.userMapper = userMapper;
     }
 
     @Override
@@ -57,6 +58,7 @@ public class PostServiceImpl implements PostService {
         post.setPostLooksNum(0);
         post.setPostCreateTime(LocalDateTime.now());
         post.setPostEditTime(post.getPostCreateTime());
+        post.setPostState(0);
         return postMapper.insert(post) == 1;
     }
 
@@ -104,6 +106,7 @@ public class PostServiceImpl implements PostService {
     public List<Post> getPostPage(PostPage postPage) {
         IPage<Post> postIPage = new Page<Post>(postPage.getPageNum(), postPage.getPageNum());
         QueryWrapper<Post> postQueryWrapper = new QueryWrapper<>();
+        postQueryWrapper.eq("post_state", 1);
         postMapper.selectPage(postIPage, postQueryWrapper);
         return null;
     }
@@ -167,6 +170,7 @@ public class PostServiceImpl implements PostService {
         LambdaQueryWrapper<Post> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Post::getPostId, postId);
         queryWrapper.eq(Post::getUserId, userId);
+        queryWrapper.eq(Post::getPostState, 1);
         if (postMapper.selectList(queryWrapper).size() == 1) {
             //查询到属于一登陆用户的帖子，可以删除
             //删除相关的action、comment、comment相关的action、postImg、reporting
@@ -230,10 +234,38 @@ public class PostServiceImpl implements PostService {
         return postMapper.delete(queryWrapper) == 1;
     }
 
+    @Override
+    public IPage<Post> getReviewPostPage(IPage<Post> page) {
+        LambdaQueryWrapper<Post> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Post::getPostState, 0);
+        postMapper.selectPage(page, queryWrapper);
+        page.getRecords().stream().forEach((post) -> {
+            post.setUserName(userMapper.selectById(post.getUserId()).getUserName());
+        });
+        return page;
+    }
+
+    @Override
+    public Boolean passPost(Integer postId) {
+        LambdaUpdateWrapper<Post> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.set(Post::getPostState, 1);
+        updateWrapper.eq(Post::getPostId,postId);
+        return postMapper.update(null, updateWrapper) == 1;
+    }
+
+    @Override
+    public Boolean unPassPost(Integer postId) {
+        LambdaUpdateWrapper<Post> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.set(Post::getPostState, 2);
+        updateWrapper.eq(Post::getPostId,postId);
+        return postMapper.update(null, updateWrapper) == 1;
+    }
+
     private void setOfficialPostCache() {
         QueryWrapper<Post> queryWrapper = new QueryWrapper<>();
         queryWrapper.select("post_id");
         queryWrapper.eq("partition_id", 3);
+        queryWrapper.eq("post_state", 1);
         queryWrapper.orderByDesc("post_create_time");
         IPage<Post> page = new Page<>(1, 5);
         postMapper.selectPage(page, queryWrapper);
