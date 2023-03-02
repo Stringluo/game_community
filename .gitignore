@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 log/
+src/main/resources/static/
+src/main/resources/templates/
 
 
 ### STS ###
