@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 8080
+  port: 10241
   servlet:
     session:
       timeout: 7200
@@ -67,6 +67,6 @@ mybatis-plus:
 #配置属性
 static:
   #wins静态文件位置
-  base-dir: "E:/02-javaStu/Game_Community/"
+  base-dir: "E:/02-javaStu/97-Demo/Game_Community/"
   #linux静态文件位置
   #base-dir: "/www/wwwroot/game_community/static/"
