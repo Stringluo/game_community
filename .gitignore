@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 log/
 static/
-application.yml
+resources/application.yml
 
 ### STS ###
 .apt_generated
