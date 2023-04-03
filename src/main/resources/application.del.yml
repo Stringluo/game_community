@@ -11,16 +11,16 @@ spring:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/game_community?serverTimezone=UTC
-      username: root
-      password: 1024
+      username: XXXX
+      password: XXXX
 
   #邮件相关配置
   mail:
     host: smtp.163.com
     port: 465
     default-encoding: UTF-8
-    username: cqk428010518@163.com
-    password: QTQYVIJMXZAUNJZS
+    username: XXXXXXXXX
+    password: XXXXXXXXX
     protocol: smtp
     properties:
       mail:
