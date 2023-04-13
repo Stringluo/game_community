@@ -1,26 +1,19 @@
-#端口
-server:
-  port: 10241
-  servlet:
-    session:
-      timeout: 7200
-
 #druid连接配置
 spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/game_community?serverTimezone=UTC
-      username: XXXX
-      password: XXXX
+      username: root
+      password: 1024
 
   #邮件相关配置
   mail:
     host: smtp.163.com
     port: 465
     default-encoding: UTF-8
-    username: XXXXXXXXX
-    password: XXXXXXXXX
+    username: cqk428010518@163.com
+    password: QTQYVIJMXZAUNJZS
     protocol: smtp
     properties:
       mail:
@@ -34,12 +27,9 @@ spring:
             socketFactory:
               port: 465
               class: javax.net.ssl.SSLSocketFactory
-  web:
-    resources:
-      static-locations: classpath:/static,classpath:/resources,file:/www/wwwroot/game_community/static/img/
 
 #jetCache
-jetcache:
+jetcache: #redis数据库，安装默认无密码，如有密码，自行修改
   remote:
     default:
       type: redis
@@ -55,18 +45,9 @@ logging:
   file:
     name: log/log.txt
 
-#mybatis配置数据库中划线命名对应实体类驼峰命名
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      table-prefix: tb_
-      id-type: auto
-
 #配置属性
 static:
   #wins静态文件位置
-  #base-dir: "E:/02-javaStu/97-Demo/Game_Community/"
+  base-dir: "E:/02-javaStu/97-Demo/Game_Community/"
   #linux静态文件位置
-  base-dir: "/www/wwwroot/game_community/static/"
+  #base-dir: "/www/wwwroot/game_community/static/"

@@ -1,0 +1,24 @@
+#端口
+server:
+  port: 10241
+  servlet:
+    session:
+      timeout: 7200
+
+#druid连接配置
+spring:
+  profiles:
+    active: dev #配置文开源文件为open,自行将dev改为open
+
+  web:
+    resources:
+      static-locations: classpath:/static,classpath:/resources,file:/www/wwwroot/game_community/static/img/
+
+#mybatis配置数据库中划线命名对应实体类驼峰命名
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: tb_
+      id-type: auto
