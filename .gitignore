@@ -3,7 +3,7 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 test
 log
-static
+staticFiles
 !/src/main/resources/application-dev.yml
 
 ### STS ###
