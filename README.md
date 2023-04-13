@@ -8,3 +8,6 @@ https://github.com/Stringluo/game_community_vue
 3. redis
 ## 项目功能展示
 [![ppxgqZ4.png](https://s1.ax1x.com/2023/04/13/ppxgqZ4.png)](https://imgse.com/i/ppxgqZ4)
+## 项目起步
+1. 按照提示修改application.yml和application-open.yml文件
+2. 启动Application启动类
