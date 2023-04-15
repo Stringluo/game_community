@@ -1,8 +1,6 @@
 .gitignore
 HELP.md
 target/
-src/test/
-.mvn/
 test
 log
 static
