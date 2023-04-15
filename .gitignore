@@ -1,7 +1,8 @@
 .gitignore
 HELP.md
 target/
-.mvn/wrapper/maven-wrapper.jar
+src/test/
+.mvn
 test
 log
 static
