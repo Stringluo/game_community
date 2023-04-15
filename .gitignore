@@ -5,7 +5,7 @@ target/
 test
 log
 static
-/src/main/resources/application-dev.yml
+src/main/resources/application-dev.yml
 
 ### STS ###
 .apt_generated
