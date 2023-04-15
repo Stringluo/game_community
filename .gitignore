@@ -1,10 +1,11 @@
+.gitignore
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 test
 log
 static
-!/src/main/resources/application-dev.yml
+/src/main/resources/application-dev.yml
 
 ### STS ###
 .apt_generated
