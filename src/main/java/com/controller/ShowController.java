@@ -206,6 +206,12 @@ public class ShowController {
         return rtnData;
     }
 
+    /**
+     * 获取用户关注列表
+     * @param userId 用户id
+     * @param session 从session中获取用户id对比是否正确
+     * @return 返回用户关注列表
+     */
     @GetMapping("/getUserFocus/{userId}")
     public RtnData getUserFocus(@PathVariable("userId") Integer userId, HttpSession session) {
         RtnData rtnData = new RtnData();
@@ -219,6 +225,12 @@ public class ShowController {
         return rtnData;
     }
 
+    /**
+     * 获取用户粉丝
+     * @param userId 用户id
+     * @param session 从session中获取用户id来对比是否正确
+     * @return 返回用户粉丝列表
+     */
     @GetMapping("/getUserFans/{userId}")
     public RtnData getUserFans(@PathVariable("userId") Integer userId, HttpSession session) {
         RtnData rtnData = new RtnData();

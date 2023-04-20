@@ -76,6 +76,12 @@ public class PostController {
         return rtnData;
     }
 
+    /**
+     * 编辑帖子
+     * @param imgPost 修改后的帖子信息
+     * @param session 从session中获取用户信息，判断是否能够修改帖子
+     * @return 返回帖子是否修改成功
+     */
     @PostMapping("/editPost")
     public RtnData editPost(@RequestBody PostImg imgPost, HttpSession session) {
         RtnData rtnData = new RtnData();
@@ -137,6 +143,12 @@ public class PostController {
         return rtnData;
     }
 
+    /**
+     * 删除帖子
+     * @param postId 被删除的帖子id
+     * @param session 从session中获取用户信息，判断是否能够删除帖子
+     * @return 返回是否删除成功
+     */
     @DeleteMapping("/deletePost/{postId}")
     public RtnData deletePostById(@PathVariable("postId") Integer postId, HttpSession session) {
         RtnData rtnData = new RtnData();
@@ -154,6 +166,12 @@ public class PostController {
         return rtnData;
     }
 
+    /**
+     * 保存图片
+     * @param imgPost 图片信息
+     * @param post 帖子信息
+     * 保存用户在编写帖子时上传的图片
+     */
     private void saveImg(PostImg imgPost, Post post) {
         if (imgPost.getImgUrls().size() > 0) {
             List<com.pojo.PostImg> postImgList = new ArrayList<>();

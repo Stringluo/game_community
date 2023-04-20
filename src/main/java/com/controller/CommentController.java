@@ -48,6 +48,12 @@ public class CommentController {
         return rtnData;
     }
 
+    /**
+     * 回复评论
+     * @param comment 回复信息
+     * @param session 从session中获取用户id用来回复评论
+     * @return 返回是否回复成功
+     */
     @PostMapping("/commentComment")
     public RtnData commentComment(@RequestBody Comment comment, HttpSession session) {
         RtnData rtnData = new RtnData();
