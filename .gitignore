@@ -5,6 +5,7 @@ test
 log
 static
 /src/main/resources/application-dev.yml
+!game_community_java-0.0.1-SNAPSHOT.jar
 
 ### STS ###
 .apt_gener
@@ -49,7 +50,6 @@ build/
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
