@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" type="text/css" href="/root/Yunzai-Bot/plugins/genshin/resources/html/ledger/ledger.css" />
+    <link rel="preload" href="https://unpkg.com/@antv/g2plot@latest/dist/g2plot.min.js" as="script" />
+    <link rel="preload" href="/root/Yunzai-Bot/resources//font/tttgbnumber.ttf" as="font">
+    <link rel="preload" href="/root/Yunzai-Bot/plugins/genshin/resources/img/other/bg.webp" as="image">
+    <link rel="preload" href="/root/Yunzai-Bot/plugins/genshin/resources/img/other/chart.png" as="image">
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="title-box">
+        <div class="info">
+          <div class="uid">ID：145267647</div>
+          <div class="month">2月19号札记</div>
+        </div>
+        <img class="genshin_logo" src="/root/Yunzai-Bot/plugins/genshin/resources/img/other/原神.png" />
+      </div>
+      <div class="data-box">
+        <div class="month">
+          <div class="head">当月获取：</div>
+          <div class="primogems">
+            <div class="icon-ys"></div>
+            <div class="text">原石：5902 | 37 抽</div>
+          </div>
+          <div class="primogems">
+            <div class="icon-mola"></div>
+            <div class="text">摩拉：609.0 w</div>
+          </div>
+        </div>
+        <div class="day">
+          <div class="head">上月获取：</div>
+          <div class="primogems">
+            <div class="icon-ys"></div>
+            <div class="text">原石：5054 | 32 抽</div>
+          </div>
+          <div class="primogems">
+            <div class="icon-mola"></div>
+            <div class="text">摩拉：546.8 w</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="head">原石收入组成：</div>
+        <div class="chart-info">
+          <div id="chartContainer"></div>
+          <ul class="tooltip">
+            
+            <li>
+              <i style="background: #70b2b4"></i>
+              <span class="action">任务奖励</span> <em>28%</em><span class="num">1610</span>
+            </li>
+            
+            <li>
+              <i style="background: #739970"></i>
+              <span class="action">深境螺旋</span> <em>21%</em><span class="num">1200</span>
+            </li>
+            
+            <li>
+              <i style="background: #597ea0"></i>
+              <span class="action">活动奖励</span> <em>18%</em><span class="num">1040</span>
+            </li>
+            
+            <li>
+              <i style="background: #bd9a5a"></i>
+              <span class="action">每日活跃</span> <em>16%</em><span class="num">960</span>
+            </li>
+            
+            <li>
+              <i style="background: #d56565"></i>
+              <span class="action">冒险奖励</span> <em>9%</em><span class="num">537</span>
+            </li>
+            
+            <li>
+              <i style="background: #7a6da7"></i>
+              <span class="action">邮件奖励</span> <em>7%</em><span class="num">440</span>
+            </li>
+            
+            <li>
+              <i style="background: #73a9c6"></i>
+              <span class="action">其他</span> <em>1%</em><span class="num">115</span>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="https://unpkg.com/@antv/g2plot@latest/dist/g2plot.min.js"></script>
+  <script>
+    const { Pie } = G2Plot;
+    const data = JSON.parse(`[{"action_id":2,"action":"任务奖励","num":1610,"percent":28,"color":"#70b2b4"},{"action_id":4,"action":"深境螺旋","num":1200,"percent":21,"color":"#739970"},{"action_id":6,"action":"活动奖励","num":1040,"percent":18,"color":"#597ea0"},{"action_id":3,"action":"每日活跃","num":960,"percent":16,"color":"#bd9a5a"},{"action_id":1,"action":"冒险奖励","num":537,"percent":9,"color":"#d56565"},{"action_id":5,"action":"邮件奖励","num":440,"percent":7,"color":"#7a6da7"},{"action_id":0,"action":"其他","num":115,"percent":1,"color":"#73a9c6"}]`);
+    const piePlot = new Pie("chartContainer", {
+      renderer: "svg",
+      animation: false,
+      data: data,
+      appendPadding: 10,
+      angleField: "num",
+      colorField: "action",
+      radius: 1,
+      innerRadius: 0.7,
+      color: JSON.parse(`["#70b2b4","#739970","#597ea0","#bd9a5a","#d56565","#7a6da7","#73a9c6"]`),
+      meta: {
+        // num: {
+        //   formatter: (v) => `${v}`,
+        // },
+      },
+      label: {
+        type: "inner",
+        offset: "-50%",
+        autoRotate: false,
+        style: {
+          textAlign: "center",
+          fontFamily: "tttgbnumber",
+        },
+        formatter: ({ percent }) => {
+          percent = (percent * 100).toFixed(0);
+          return percent > 2 ? `${percent}%` : "";
+        },
+      },
+      statistic: {
+        title: {
+          offsetY: -18,
+          content: "总计",
+        },
+        content: {
+          offsetY: -10,
+          style: {
+            fontFamily: "tttgbnumber",
+          },
+        },
+      },
+      legend:false,
+    });
+    piePlot.render();
+  </script>
+</html>

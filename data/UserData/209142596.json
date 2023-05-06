@@ -1,0 +1,299 @@
+{
+  "uid": "209142596",
+  "name": "",
+  "level": "",
+  "word": "",
+  "face": "",
+  "card": "",
+  "sign": "",
+  "info": false,
+  "_profile": 1677843846219,
+  "avatars": {
+    "10000046": {
+      "name": "胡桃",
+      "id": 10000046,
+      "elem": "pyro",
+      "level": 80,
+      "promote": 5,
+      "fetter": 3,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 7,
+        "e": 7,
+        "q": 7
+      },
+      "weapon": {
+        "name": "匣里灭辰",
+        "level": 50,
+        "promote": 2,
+        "affix": 2
+      },
+      "artis": {
+        "1": {
+          "name": "渡火者的决绝",
+          "level": 20,
+          "star": 5,
+          "mainId": 14001,
+          "attrIds": [
+            501223,
+            501232,
+            501241,
+            501063,
+            501231,
+            501224,
+            501243,
+            501062
+          ]
+        },
+        "2": {
+          "name": "魔女常燃之羽",
+          "level": 20,
+          "star": 5,
+          "mainId": 12001,
+          "attrIds": [
+            501083,
+            501223,
+            501092,
+            501034,
+            501033,
+            501091,
+            501223,
+            501093,
+            501222
+          ]
+        },
+        "3": {
+          "name": "渡火者的煎熬",
+          "level": 20,
+          "star": 5,
+          "mainId": 10004,
+          "attrIds": [
+            501232,
+            501201,
+            501054,
+            501032,
+            501052,
+            501053,
+            501203,
+            501203
+          ]
+        },
+        "4": {
+          "name": "角斗士的酣醉",
+          "level": 20,
+          "star": 5,
+          "mainId": 15008,
+          "attrIds": [
+            501032,
+            501222,
+            501202,
+            501063,
+            501063,
+            501223,
+            501203,
+            501201
+          ]
+        },
+        "5": {
+          "name": "焦灼的魔女帽",
+          "level": 20,
+          "star": 5,
+          "mainId": 13007,
+          "attrIds": [
+            501054,
+            501084,
+            501021,
+            501221,
+            501084,
+            501223,
+            501223,
+            501024
+          ]
+        }
+      },
+      "_source": "mgg",
+      "_time": 1677843846218,
+      "_update": 1677843846218,
+      "_talent": 1677843846218
+    }
+  },
+  "chars": {
+    "10000046": {
+      "id": 10000046,
+      "name": "胡桃",
+      "elem": "pyro",
+      "level": 70,
+      "promote": 5,
+      "fetter": 3,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 7,
+        "e": 7,
+        "q": 7
+      },
+      "attr": {
+        "atk": 910.3237422,
+        "atkBase": 324.8252,
+        "def": 903.53674,
+        "defBase": 711.89606,
+        "hp": 19893.398,
+        "hpBase": 12636.645,
+        "mastery": 180.292,
+        "recharge": 114.89,
+        "heal": 0,
+        "cpct": 55.15,
+        "cdmg": 146.39,
+        "dmg": 61.6,
+        "phy": 0
+      },
+      "weapon": {
+        "name": "匣里灭辰",
+        "star": 4,
+        "level": 50,
+        "promote": 2,
+        "affix": 2
+      },
+      "artis": {
+        "1": {
+          "name": "渡火者的决绝",
+          "set": "渡过烈火的贤人",
+          "level": 17,
+          "main": {
+            "key": "hpPlus",
+            "value": 4171
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 14.8
+            },
+            {
+              "key": "recharge",
+              "value": 9.7
+            },
+            {
+              "key": "mastery",
+              "value": 37
+            },
+            {
+              "key": "atk",
+              "value": 5.3
+            }
+          ]
+        },
+        "2": {
+          "name": "魔女常燃之羽",
+          "set": "炽烈的炎之魔女",
+          "level": 20,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 21
+            },
+            {
+              "key": "cdmg",
+              "value": 20.2
+            },
+            {
+              "key": "def",
+              "value": 17.5
+            },
+            {
+              "key": "hp",
+              "value": 11.1
+            }
+          ]
+        },
+        "3": {
+          "name": "渡火者的煎熬",
+          "set": "渡过烈火的贤人",
+          "level": 20,
+          "main": {
+            "key": "atk",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "recharge",
+              "value": 5.2
+            },
+            {
+              "key": "cpct",
+              "value": 9.7
+            },
+            {
+              "key": "atkPlus",
+              "value": 53
+            },
+            {
+              "key": "hp",
+              "value": 4.7
+            }
+          ]
+        },
+        "4": {
+          "name": "角斗士的酣醉",
+          "set": "角斗士的终幕礼",
+          "level": 20,
+          "main": {
+            "key": "pyro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "hp",
+              "value": 4.7
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            },
+            {
+              "key": "cpct",
+              "value": 9.3
+            },
+            {
+              "key": "atk",
+              "value": 10.5
+            }
+          ]
+        },
+        "5": {
+          "name": "焦灼的魔女帽",
+          "set": "炽烈的炎之魔女",
+          "level": 20,
+          "main": {
+            "key": "cpct",
+            "value": 31.1
+          },
+          "attrs": [
+            {
+              "key": "atkPlus",
+              "value": 19
+            },
+            {
+              "key": "defPlus",
+              "value": 46
+            },
+            {
+              "key": "hpPlus",
+              "value": 508
+            },
+            {
+              "key": "cdmg",
+              "value": 19.4
+            }
+          ]
+        }
+      },
+      "dataSource": "enka",
+      "_time": 1676782797218
+    }
+  }
+}

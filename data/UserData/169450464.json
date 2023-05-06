@@ -1,0 +1,690 @@
+{
+  "uid": "169450464",
+  "name": "",
+  "level": "",
+  "word": "",
+  "face": "",
+  "card": "",
+  "sign": "",
+  "info": false,
+  "avatars": {
+    "10000046": {
+      "name": "胡桃",
+      "id": 10000046,
+      "elem": "pyro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 10,
+        "e": 10,
+        "q": 10
+      },
+      "weapon": {
+        "name": "护摩之杖",
+        "level": 90,
+        "promote": 6,
+        "affix": 1
+      },
+      "artis": {
+        "1": {
+          "name": "魔女的炎之花",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 23
+            },
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "cdmg",
+              "value": 28
+            },
+            {
+              "key": "atk",
+              "value": 4.1
+            }
+          ]
+        },
+        "2": {
+          "name": "魔女常燃之羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 14.8
+            },
+            {
+              "key": "def",
+              "value": 5.8
+            },
+            {
+              "key": "mastery",
+              "value": 16
+            },
+            {
+              "key": "cpct",
+              "value": 17.1
+            }
+          ]
+        },
+        "3": {
+          "name": "终幕的时计",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hp",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 21.8
+            },
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "atkPlus",
+              "value": 14
+            },
+            {
+              "key": "mastery",
+              "value": 35
+            }
+          ]
+        },
+        "4": {
+          "name": "魔女的心之火",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "pyro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 6.6
+            },
+            {
+              "key": "def",
+              "value": 16.8
+            },
+            {
+              "key": "defPlus",
+              "value": 16
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            }
+          ]
+        },
+        "5": {
+          "name": "焦灼的魔女帽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cpct",
+            "value": 31.1
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 58
+            },
+            {
+              "key": "hpPlus",
+              "value": 209
+            },
+            {
+              "key": "def",
+              "value": 5.1
+            },
+            {
+              "key": "cdmg",
+              "value": 22.5
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1676719255626,
+      "_update": 1677902708687,
+      "_talent": 1677902708687
+    },
+    "10000060": {
+      "name": "夜兰",
+      "id": 10000060,
+      "elem": "hydro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 4,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 1,
+        "e": 7,
+        "q": 9
+      },
+      "weapon": {
+        "name": "若水",
+        "level": 90,
+        "promote": 6,
+        "affix": 1
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 21
+            },
+            {
+              "key": "mastery",
+              "value": 19
+            },
+            {
+              "key": "hp",
+              "value": 15.7
+            },
+            {
+              "key": "cdmg",
+              "value": 27.2
+            }
+          ]
+        },
+        "2": {
+          "name": "切落之羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 21
+            },
+            {
+              "key": "mastery",
+              "value": 21
+            },
+            {
+              "key": "hpPlus",
+              "value": 747
+            },
+            {
+              "key": "cpct",
+              "value": 6.2
+            }
+          ]
+        },
+        "3": {
+          "name": "坚铜罗盘",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "recharge",
+            "value": 51.8
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 10.1
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            },
+            {
+              "key": "atkPlus",
+              "value": 29
+            },
+            {
+              "key": "defPlus",
+              "value": 42
+            }
+          ]
+        },
+        "4": {
+          "name": "绯花之壶",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hydro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 63
+            },
+            {
+              "key": "recharge",
+              "value": 18.8
+            },
+            {
+              "key": "hpPlus",
+              "value": 209
+            },
+            {
+              "key": "cpct",
+              "value": 3.1
+            }
+          ]
+        },
+        "5": {
+          "name": "华饰之兜",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 42
+            },
+            {
+              "key": "atkPlus",
+              "value": 51
+            },
+            {
+              "key": "hpPlus",
+              "value": 269
+            },
+            {
+              "key": "cpct",
+              "value": 9.7
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1676719255627,
+      "_update": 1677902708687,
+      "_talent": 1677902708687
+    }
+  },
+  "chars": {
+    "10000046": {
+      "id": 10000046,
+      "name": "胡桃",
+      "elem": "pyro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 10,
+        "e": 10,
+        "q": 10
+      },
+      "attr": {
+        "atk": 1068.280998424,
+        "atkBase": 714.50903,
+        "def": 1158.1085,
+        "defBase": 876.152,
+        "hp": 34787.348,
+        "hpBase": 15552.307,
+        "mastery": 109.57,
+        "recharge": 100,
+        "heal": 0,
+        "cpct": 73.82,
+        "cdmg": 254.7736,
+        "dmg": 61.6,
+        "phy": 0
+      },
+      "weapon": {
+        "name": "护摩之杖",
+        "star": 5,
+        "level": 90,
+        "promote": 6,
+        "affix": 1
+      },
+      "artis": {
+        "1": {
+          "name": "魔女的炎之花",
+          "set": "炽烈的炎之魔女",
+          "level": 20,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 23
+            },
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "cdmg",
+              "value": 28
+            },
+            {
+              "key": "atk",
+              "value": 4.1
+            }
+          ]
+        },
+        "2": {
+          "name": "魔女常燃之羽",
+          "set": "炽烈的炎之魔女",
+          "level": 20,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 14.8
+            },
+            {
+              "key": "def",
+              "value": 5.8
+            },
+            {
+              "key": "mastery",
+              "value": 16
+            },
+            {
+              "key": "cpct",
+              "value": 17.1
+            }
+          ]
+        },
+        "3": {
+          "name": "终幕的时计",
+          "set": "流浪大地的乐团",
+          "level": 20,
+          "main": {
+            "key": "hp",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 21.8
+            },
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "atkPlus",
+              "value": 14
+            },
+            {
+              "key": "mastery",
+              "value": 35
+            }
+          ]
+        },
+        "4": {
+          "name": "魔女的心之火",
+          "set": "炽烈的炎之魔女",
+          "level": 20,
+          "main": {
+            "key": "pyro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 6.6
+            },
+            {
+              "key": "def",
+              "value": 16.8
+            },
+            {
+              "key": "defPlus",
+              "value": 16
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            }
+          ]
+        },
+        "5": {
+          "name": "焦灼的魔女帽",
+          "set": "炽烈的炎之魔女",
+          "level": 20,
+          "main": {
+            "key": "cpct",
+            "value": 31.1
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 58
+            },
+            {
+              "key": "hpPlus",
+              "value": 209
+            },
+            {
+              "key": "def",
+              "value": 5.1
+            },
+            {
+              "key": "cdmg",
+              "value": 22.5
+            }
+          ]
+        }
+      },
+      "dataSource": "enka",
+      "_time": 1676719255626
+    },
+    "10000060": {
+      "id": 10000060,
+      "name": "夜兰",
+      "elem": "hydro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 4,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 1,
+        "e": 7,
+        "q": 9
+      },
+      "attr": {
+        "atk": 1176.55175,
+        "atkBase": 785.79175,
+        "def": 652.1493,
+        "defBase": 547.9793,
+        "hp": 31255.139,
+        "hpBase": 14450.176,
+        "mastery": 102.56999,
+        "recharge": 190.59,
+        "heal": 0,
+        "cpct": 53.360003,
+        "cdmg": 261.7948,
+        "dmg": 46.6,
+        "phy": 0
+      },
+      "weapon": {
+        "name": "若水",
+        "star": 5,
+        "level": 90,
+        "promote": 6,
+        "affix": 1
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "set": "绝缘之旗印",
+          "level": 20,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 21
+            },
+            {
+              "key": "mastery",
+              "value": 19
+            },
+            {
+              "key": "hp",
+              "value": 15.7
+            },
+            {
+              "key": "cdmg",
+              "value": 27.2
+            }
+          ]
+        },
+        "2": {
+          "name": "切落之羽",
+          "set": "绝缘之旗印",
+          "level": 20,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 21
+            },
+            {
+              "key": "mastery",
+              "value": 21
+            },
+            {
+              "key": "hpPlus",
+              "value": 747
+            },
+            {
+              "key": "cpct",
+              "value": 6.2
+            }
+          ]
+        },
+        "3": {
+          "name": "坚铜罗盘",
+          "set": "沉沦之心",
+          "level": 20,
+          "main": {
+            "key": "recharge",
+            "value": 51.8
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 10.1
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            },
+            {
+              "key": "atkPlus",
+              "value": 29
+            },
+            {
+              "key": "defPlus",
+              "value": 42
+            }
+          ]
+        },
+        "4": {
+          "name": "绯花之壶",
+          "set": "绝缘之旗印",
+          "level": 20,
+          "main": {
+            "key": "hydro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 63
+            },
+            {
+              "key": "recharge",
+              "value": 18.8
+            },
+            {
+              "key": "hpPlus",
+              "value": 209
+            },
+            {
+              "key": "cpct",
+              "value": 3.1
+            }
+          ]
+        },
+        "5": {
+          "name": "华饰之兜",
+          "set": "绝缘之旗印",
+          "level": 20,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 42
+            },
+            {
+              "key": "atkPlus",
+              "value": 51
+            },
+            {
+              "key": "hpPlus",
+              "value": 269
+            },
+            {
+              "key": "cpct",
+              "value": 9.7
+            }
+          ]
+        }
+      },
+      "dataSource": "enka",
+      "_time": 1676719255627
+    }
+  }
+}

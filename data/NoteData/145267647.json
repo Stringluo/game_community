@@ -1,0 +1,233 @@
+{
+	"2022": {
+		"12": {
+			"uid": 145267647,
+			"region": "cn_gf01",
+			"account_id": 225127066,
+			"nickname": "洛羽",
+			"date": "2023-02-19",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 12,
+			"data_last_month": 11,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 5734,
+				"current_mora": 2988447,
+				"last_primogems": 5411,
+				"last_mora": 4562415,
+				"current_primogems_level": 3,
+				"primogems_rate": 5,
+				"mora_rate": -34,
+				"group_by": [
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 2480,
+						"percent": 44
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 1360,
+						"percent": 23
+					},
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 1340,
+						"percent": 23
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 450,
+						"percent": 7
+					},
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 60,
+						"percent": 1
+					},
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 10,
+						"percent": 1
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 34,
+						"percent": 1
+					}
+				]
+			},
+			"lantern": false,
+			"isUpdate": true
+		}
+	},
+	"2023": {
+		"1": {
+			"uid": 145267647,
+			"region": "cn_gf01",
+			"account_id": 225127066,
+			"nickname": "洛羽",
+			"date": "2023-02-19",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 1,
+			"data_last_month": 12,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 5054,
+				"current_mora": 5467679,
+				"last_primogems": 5734,
+				"last_mora": 2988447,
+				"current_primogems_level": 3,
+				"primogems_rate": -11,
+				"mora_rate": 82,
+				"group_by": [
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 2130,
+						"percent": 43
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 1620,
+						"percent": 32
+					},
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 660,
+						"percent": 13
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 450,
+						"percent": 8
+					},
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 44,
+						"percent": 1
+					},
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 30,
+						"percent": 1
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 120,
+						"percent": 2
+					}
+				]
+			},
+			"lantern": false,
+			"isUpdate": true
+		},
+		"2": {
+			"uid": 145267647,
+			"region": "cn_gf01",
+			"account_id": 225127066,
+			"nickname": "洛羽",
+			"date": "2023-02-19",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 2,
+			"data_last_month": 1,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 1065,
+				"last_mora": 887592
+			},
+			"month_data": {
+				"current_primogems": 5902,
+				"current_mora": 6090202,
+				"last_primogems": 5054,
+				"last_mora": 5467679,
+				"current_primogems_level": 3,
+				"primogems_rate": 16,
+				"mora_rate": 11,
+				"group_by": [
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 1610,
+						"percent": 28
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 1200,
+						"percent": 21
+					},
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 1040,
+						"percent": 18
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 960,
+						"percent": 16
+					},
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 537,
+						"percent": 9
+					},
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 440,
+						"percent": 7
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 115,
+						"percent": 1
+					}
+				]
+			},
+			"lantern": false
+		}
+	}
+}

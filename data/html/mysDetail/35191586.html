@@ -1,0 +1,199 @@
+<!-- 使用云崽中渲染米游社信息的方案 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="shortcut icon" href="#" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/root/Yunzai-Bot/plugins/xianxin-plugin/resources/html/mysDetail/mysDetail.css"
+    />
+  </head>
+  <body>
+    <svg style="display: none">
+      <symbol id="icon-dianzanpc" viewBox="0 0 1024 1024">
+        <path
+          d="M890.0923072 357.9623936h-252.06153813s107.07013973-335.35387307-145.07541867-336.16607253c-77.71897387-0.25206187-111.49522027 71.8655456-111.49522027 71.8655456C374.71048213 395.82763733 161.91453013 385.94122347 161.91453013 385.94122347H105.9008544c-88.13751787 0.30807573-84.02051307 76.4026528-84.020512 76.40265386S21.65628693 822.2877536 21.8803424 916.13866667c0.196048 88.52961387 82.98426027 85.08477227 82.9842592 85.08477226s497.70951147 0.50412267 636.20332267 0c117.7407456-0.44810987 138.29776427-85.08477227 138.29776426-85.08477226s57.63807147-190.250448 110.65501547-368.71001707C1047.5187424 353.8733952 890.0923072 357.9623936 890.0923072 357.9623936z"
+          fill="#ffffff"
+        ></path>
+        <path
+          d="M889.81223893 358.29847573h-251.921504s107.01412693-335.52191467-144.9913984-336.36212053c-77.69096747-0.25206187-111.4392064 71.92155947-111.4392064 71.92155947-6.749648 302.33381227-219.43357227 292.4473984-219.43357333 292.4473984H106.04088853c-88.10951147 0.30807573-83.9644992 76.43066027-83.9644992 76.4306592s-0.2240544 360.13992427 0 454.0188448c0.196048 88.55762027 82.9282464 85.14078613 82.9282464 85.14078613s497.4574496 0.50412267 635.8672416 0c117.68473173-0.44810987 138.2417504-85.14078613 138.2417504-85.14078613s57.61006507-190.33446827 110.57099414-368.90606507c57.47003093-193.63927573-99.87238293-189.55027733-99.87238294-189.55027627zM77.89401707 895.69367573V486.7938464S77.13783253 441.9829056 122.73296427 441.9829056c14.78761067 0 51.6166016 4.20102613 95.2512544-2.35257387V946.10598293h-84.02051307S77.89401707 953.3317472 77.89401707 895.69367573z m862.77863893-392.09572693c-22.15340907 89.7339072-112.0553568 380.89299093-112.0553568 380.89299093s-18.0083968 61.6150432-106.45398933 61.6150432H273.9978944V425.03876907c77.94302933-29.96731627 157.56646827-107.26618773 168.06903253-302.33381227 0 0 55.00542933-103.06516267 140.06219414 5.60136747 53.80113493 68.72877973-28.00683733 285.669744-28.00683734 285.669744h324.93533014c-0.0280064 0 83.7684512-0.11202773 61.61504213 89.62188053z"
+          fill="#b2b2b2"
+        ></path>
+      </symbol>
+      <symbol id="icon-shoucang" viewBox="0 0 1080 1024">
+        <path
+          d="M999.168 343.04l-245.020444-62.919111-159.800889-220.216889S575.772444 28.586667 541.070222 28.444444c-34.702222-0.170667-63.914667 31.459556-63.914666 31.459556L328.049778 269.653333s-225.024 67.555556-245.020445 73.415111c-19.996444 5.859556-49.180444 19.484444-53.276444 41.955556-6.997333 38.428444 10.638222 62.919111 10.638222 62.919111l159.800889 188.757333v283.136c0.028444 21.504-2.332444 42.723556 21.304889 62.919112s63.914667 10.496 63.914667 10.496l255.658666-104.874667 245.020445 94.378667c16.981333 6.542222 52.423111 18.488889 74.581333 0 22.158222-18.488889 21.304889-52.451556 21.304889-52.451556V636.700444s116.593778-143.160889 138.496-167.793777c21.902222-24.632889 31.744-41.386667 31.971555-73.415111s-53.276444-52.451556-53.276444-52.451556z"
+          fill="#ffffff"
+        ></path>
+        <path
+          d="M999.196444 343.04l-244.935111-62.919111-159.744-220.216889S575.943111 28.586667 541.269333 28.444444c-34.673778-0.170667-63.886222 31.459556-63.886222 31.459556L328.305778 269.653333s-224.938667 67.555556-244.935111 73.415111c-19.968 5.859556-49.152 19.484444-53.248 41.955556-6.997333 38.428444 10.638222 62.919111 10.638222 62.919111l159.744 188.757333v283.136c0.028444 21.475556-2.332444 42.723556 21.304889 62.919112 23.637333 20.195556 63.886222 10.496 63.886222 10.496l255.573333-104.874667 244.935111 94.378667c16.952889 6.542222 52.394667 18.488889 74.552889 0s21.304889-52.451556 21.304889-52.451556V636.700444s116.536889-143.160889 138.439111-167.793777c21.902222-24.632889 31.744-41.386667 31.943111-73.415111s-53.248-52.451556-53.248-52.451556z m-9.301333 72.248889c-10.752 13.909333-164.920889 199.111111-164.920889 199.111111v301.511111s3.214222 19.456-22.755555 11.377778c-25.969778-8.078222-261.603556-96.711111-261.603556-96.711111l-267.292444 102.4s-17.152 9.671111-17.066667-11.377778c0.113778-21.048889 0-307.2 0-307.2l-164.920889-193.422222s-17.265778-14.592 5.688889-22.755556c22.954667-8.163556 267.292444-85.333333 267.292444-85.333333l159.232-221.866667s16.128-15.758222 28.444445 0c12.316444 15.758222 164.920889 233.244444 164.920889 233.244445l267.292444 73.955555s16.412444 3.157333 5.688889 17.066667z"
+          fill="#b2b2b2"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="container" id="container">
+      <div class="mhy-layout__main">
+        <div class="mhy-article-page__main mhy-container">
+          <div class="account">
+            <div class="mhy-authentication-mark-container">
+              <span class="mhy-authentication-mark"
+                ><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAABPlBMVEVHcEwAqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv////8Aqv8Aqf4AqP4Apv0AnPgAm/cApPwAofoAovsAp/4Ao/z9/v/+//8KmPQAp/264/yW2P0AmPYAlPMAk/P2+/8AmPVLw//C6v+66P+x4/6w4/45u/4+v/81uv4qtv4uuP7c8/+a3f9Kw/9z0P+45f4itf8lpPY5sfkIqf3f9P+t5P+84vwDq/8Jnvdmxvx60//D6P5CtPkgofWz4/4Gp/0Or/+p4v9Wx//A5Pwyu/8Hnfae3/9syPy34/2d1fodnvMen/TB5/6m2foup/ah2/w4q/aHy/mGy/kApf2nskCjAAAAIHRSTlMAAT7K2/Ni+egCKEkDP4nMY+snIYrcxMOLwsXyR0ZAy1ZX3U4AAAFtSURBVCjPjZNnY4IwEIYVRRDcq9auEEDBbR3de++9927//x9oOEwJ2g++X5LLk3F3ufN4BpSXi2REQRAzKc7bB4MBv/InfyDopkmf4pIvydLxuNKjOOfQMUHpkzBKaWJE+Ud8wqYh5t2pBeb9EOAAc2R6hjFiEC8T0TxCi0x8VvxhZv8cQrOMGSY44phLZYQqy44dIXgIZgeba+urK4ho9/74+vYSFocJFmG2h1y6gkWRYEgJ3tlg6fkFhtRQrBqHdYfW7wyVYrgcF/LVfUpvqvkCppfbrhG+RfFZl4JrKTsIXDqleLuEncBoWtQHio9UJi00qWoDofbXdxuhRhf7oWZitlF8LT89t1ovb5WTIvMlntAEGNrHe7Oj653m56MGC1H7Qz0SD1if1E1NM8kAmJdouchWamqmqRGP8Y9h1KyUyE6xyeQ8VrseqUWyi5fZUpWi7kKLSr1tkHZgurcNrA1cNmc1US7LBQdtvF/ScFfDvR1lkgAAAABJRU5ErkJggg=="
+                  class="mhy-img-icon mhy-symbol-icon"
+              /></span>
+            </div>
+            <img src="https://upload-bbs.miyoushe.com/upload/2023/01/17/eea34a23b0926f1b88411b34e424c3aa_4445348409315944246.jpg" class="mhy-account-avatar" />
+            <div class="account-info">
+              <div class="mhy-account-title">
+                O丶Ha丶Yo
+                <img
+                  src="https://img-static.mihoyo.com/level/level16.png"
+                  class="mhy-img-icon account-title"
+                />
+
+                
+              </div>
+              <p class="account-label">
+                米游社2022年度创作者、攻略作者、观测者
+              </p>
+            </div>
+            <div
+              class="mhy-follow-button sm-btn android-margin"
+              id="qrcode"
+            ></div>
+            <img class="mhy-logo" src="/root/Yunzai-Bot/plugins/xianxin-plugin/resources/html/mysDetail/mys.png" />
+          </div>
+          <div class="mhy-article-page__header">
+            <div class="mhy-article-page__title">
+              <h1>【V3.4攻略·角色攻略】胡桃的阵容搭配攻略</h1>
+            </div>
+
+            <div class="mhy-article-page-info">
+              <div class="mhy-article-page-info__from">
+                <span>来自版块：</span>
+                <a
+                  href=""
+                  class="mhy-router-link mhy-article-page-info__from-name"
+                  target="_blank"
+                  >攻略
+                </a>
+              </div>
+              <div class="mhy-article-page-info__count">
+                <div class="mhy-article-page-info__count-item">
+                  <i class="mhy-icon iconfont icon-liulanshu"></i>
+                  <span title="">38.05万</span>
+                </div>
+                <div class="mhy-article-page-info__count-item">
+                  <i class="mhy-icon iconfont icon-dianzan"></i>
+                  <span title="">3733</span>
+                </div>
+                <div class="mhy-article-page-info__count-item mhy-clickable">
+                  <i class="mhy-icon iconfont icon-liuyanshu"></i>
+                  <span title="">478</span>
+                </div>
+                <!-- <div class="mhy-article-page-info__count-item">
+                  <i class="mhy-icon iconfont icon-shoucang"></i> <span title="">2968</span>
+                </div> -->
+              </div>
+            </div>
+            <div class="mhy-article-page-updatetime">
+              <span>文章发表：2/3/2023, 12:17:02 PM</span>
+            </div>
+          </div>
+          <div class="mhy-article-page__content">
+            <div class="mhy-img-text-article ql-container ql-snow">
+              <div class="data_box mhy-img-text-article__content ql-editor">
+                <h2>UID：152901193</h2><div class="ql-divider" data-type="line_3"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/e7047588e912d60ff87a975e037c7606.png"></div><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/7a6aa51594af0d57438ae05db5608fdf_161664402827251435.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><div class="ql-divider" data-type="line_2"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/477d4c535e965bec1791203aecdfa8e6.png"></div><p class="ql-align-center"><br></p><h1 class="ql-align-center"><span style="color: rgb(161, 25, 26);">·【前言】·</span></h1><p class="ql-align-center"><span style="color: rgb(160, 84, 76);"> </span></p><p>大家好，这里是你们的姜姜欧巴！这次带来了<strong style="color: rgb(188, 106, 87);">《胡桃的阵容搭配攻略》</strong>。本次为<strong style="color: rgb(188, 106, 87);">联合创作</strong>，文案由<strong style="color: rgb(188, 106, 87);">【小海学长】</strong>提供，感谢老海的辛苦付出。</p><p>一如既往，以下内容为自己<strong style="color: rgb(188, 106, 87);">个人见解</strong>，若有错误请各位及时纠错，若有缺失，劳烦及时补充，欢迎各位热情讨论！先行五体投地大礼表示感谢！</p><div class="ql-divider" data-type="line_1"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/40eb5281cb24042bf34a9f1bcc61eaf5.png"></div><p><strong style="color: rgb(188, 106, 87);">PS：下文，</strong></p><p><strong style="color: rgb(188, 106, 87);">A=普通攻击；</strong></p><p><strong style="color: rgb(188, 106, 87);">Z=重击；</strong></p><p><strong style="color: rgb(188, 106, 87);">E=元素战技；</strong></p><p><strong style="color: rgb(188, 106, 87);">Q=元素爆发；</strong></p><p><strong style="color: rgb(188, 106, 87);">CD=冷却时间。</strong></p><div class="ql-divider" data-type="line_4"><img src="http://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2022/07/13/line_4.png"></div><p><strong style="color: rgb(161, 25, 26);">本次排版采用了折叠框形式，</strong></p><p><strong style="color: rgb(161, 25, 26);">详细内容可点击折叠框查看。</strong></p><div class="ql-divider" data-type="line_4"><img src="http://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2022/07/13/line_4.png"></div><div class="ql-divider" data-type="line_3"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/e7047588e912d60ff87a975e037c7606.png"></div><h1 class="ql-align-center"><br></h1><h1 class="ql-align-center"><span style="color: rgb(161, 25, 26);">·【正文】·</span></h1><div class="ql-fold"><div class="ql-fold-title"><div class="ql-fold-title-content"><h2><span style="color: rgb(161, 25, 26);">❀角色机制概要</span></h2></div></div><div class="ql-fold-content"><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/395606fc5cfbf67777a33f469ab4da83_2423861473610461211.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><strong style="color: rgb(161, 25, 26);">◈</strong><span style="color: rgb(0, 0, 0);">胡桃的主要输出手段是施放E后的火元素重击</span><em style="color: rgb(127, 127, 127);">(以下用“Z”代替)</em><span style="color: rgb(0, 0, 0);">伤害，以及可用于收尾的高倍率Q伤害。Z属于A天赋，而E具有元素转换机制以及</span><strong style="color: rgb(188, 106, 87);">生命值转换为攻击的机制</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><br></p><p><strong style="color: rgb(161, 25, 26);">◈</strong><span style="color: rgb(0, 0, 0);">所以，作为主C的胡桃，</span><strong style="color: rgb(188, 106, 87);">可以考虑AEQ的等级都拉满</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><strong style="color: rgb(188, 106, 87);">A</strong><span style="color: rgb(0, 0, 0);">是胡桃主要输出手段，升级可提高自身A和Z的倍率。在施放E后进入</span><strong style="color: rgb(188, 106, 87);">E状态</strong><span style="color: rgb(0, 0, 0);">，</span><strong style="color: rgb(188, 106, 87);">A/Z</strong><span style="color: rgb(0, 0, 0);">会转换为</span><strong style="color: rgb(188, 106, 87);">无法被附魔覆盖的火元素伤害</strong><span style="color: rgb(0, 0, 0);">。其中A有大约2秒的附着CD，Z无CD，每次Z都可施加火附着，因</span><strong style="color: rgb(188, 106, 87);">水克火</strong><span style="color: rgb(0, 0, 0);">的原理，在胡桃高频火附着下，需绑定一个可</span><strong style="color: rgb(188, 106, 87);">持续后台挂水的角色</strong><span style="color: rgb(0, 0, 0);">让胡桃持续打出</span><strong style="color: rgb(188, 106, 87);">蒸发反应</strong><span style="color: rgb(0, 0, 0);">来提高胡桃的输出能力。</span></p><p><strong style="color: rgb(188, 106, 87);">E</strong><span style="color: rgb(0, 0, 0);">升级可以提高生命转攻击的加成，算是变相的提高胡桃的攻击力，当然也是有上限的，最高不能超过角色基础攻击力</span><em style="color: rgb(127, 127, 127);">(自身基础攻击力+武器基础攻击力)</em><span style="color: rgb(0, 0, 0);">的4倍。</span></p><p><span style="color: rgb(0, 0, 0);">下图为常规武器以及胡桃E等级与最大生命值的关系</span><em style="color: rgb(127, 127, 127);">(即生命值的最高上限)</em><span style="color: rgb(0, 0, 0);">。</span></p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/3f4bac7626e59261de5936e686875ba6_4239679273205682841.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><span style="color: rgb(0, 0, 0);">在对应等级下携带的不同武器，生命值若超过上图数值，超过部分则就没有收益，但是常规搭配基本不会越过上图数值。所以了解即可。</span></p><p><strong style="color: rgb(188, 106, 87);">Q</strong><span style="color: rgb(0, 0, 0);">升级可以大大提高收尾</span><em style="color: rgb(127, 127, 127);">(输出)</em><span style="color: rgb(0, 0, 0);">能力，也可以用来打核爆的一刀黑屏玩法。其次Q带有治疗机制，每命中一个敌人都会对自身治疗</span><em style="color: rgb(127, 127, 127);">(上限5次)</em><span style="color: rgb(0, 0, 0);">，治疗量受益于自身的生命值上限，若当前生命值≤50%时可进一步增加治疗量，在续航方面可以起到一定的作用。</span></p><p><span style="color: rgb(0, 0, 0);">综上推荐天赋升级顺序为</span><strong style="color: rgb(188, 106, 87);">A≥E>Q</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><span style="color: rgb(0, 0, 0);"> </span></p><p><strong style="color: rgb(161, 25, 26);">◈</strong><span style="color: rgb(0, 0, 0);">胡桃自身的增伤主要是来自60级解锁的「固有天赋·血之灶火」，当胡桃</span><strong style="color: rgb(188, 106, 87);">生命值≤50%</strong><span style="color: rgb(0, 0, 0);">时可以获得</span><strong style="color: rgb(188, 106, 87);">33%的火元素伤害</strong><em style="color: rgb(127, 127, 127);">(半血/卡血机制)</em><span style="color: rgb(0, 0, 0);">。</span></p><p><span style="color: rgb(0, 0, 0);">加上Q的伤害与治疗都会在胡桃半血状态时得到增强，所以</span><strong style="color: rgb(188, 106, 87);">胡桃的半血状态为最佳输出状态</strong><span style="color: rgb(0, 0, 0);">，而要长时间处于半血状态，阵容搭配中就挺建议携带一位提供护盾的角色来保证续航能力，相对来说，</span><strong style="color: rgb(188, 106, 87);">治疗型的角色就不适配胡桃</strong><span style="color: rgb(0, 0, 0);">。</span></p></div></div><div class="ql-fold"><div class="ql-fold-title"><div class="ql-fold-title-content"><h2><span style="color: rgb(161, 25, 26);">❀武器&圣遗物推荐</span></h2></div></div><div class="ql-fold-content"><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/6af5121bc20775d9a3023899cd8c64cc_715217768630258765.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><span style="color: rgb(0, 0, 0);">因为胡桃的基础攻击力目前依然保持着全角色倒数第一，使得</span><strong style="color: rgb(188, 106, 87);">攻击力%的收益较低</strong><span style="color: rgb(0, 0, 0);">，因此即使是五星武器也有一部分并不适合胡桃。</span></p><p><span style="color: rgb(0, 0, 0);">胡桃武器首选专武</span><strong style="color: rgb(188, 106, 87);">护摩之杖</strong><span style="color: rgb(0, 0, 0);">，次选</span><strong style="color: rgb(188, 106, 87);">赤沙之杖</strong><span style="color: rgb(0, 0, 0);">、满精</span><strong style="color: rgb(188, 106, 87);">匣里</strong><span style="color: rgb(0, 0, 0);">、</span><strong style="color: rgb(188, 106, 87);">和璞鸢</strong><span style="color: rgb(0, 0, 0);">、</span><strong style="color: rgb(188, 106, 87);">决斗</strong><span style="color: rgb(0, 0, 0);">，四星武器里有</span><strong style="color: rgb(188, 106, 87);">满精千岩</strong><span style="color: rgb(0, 0, 0);">时也可优先考虑，但建议</span><strong style="color: rgb(188, 106, 87);">璃月角色配队</strong><span style="color: rgb(0, 0, 0);">，如[胡桃+行秋+钟离+夜兰/凝光/重云]。</span></p><p><span style="color: rgb(0, 0, 0);">萌新玩家前期可以通过探寻璃月宝箱开出的</span><strong style="color: rgb(188, 106, 87);">白缨枪过渡</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><strong style="color: rgb(161, 25, 26);">❀---------</strong></p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/a41becaf382a6f6b50386c0ce977a908_7659761141570745464.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><span style="color: rgb(0, 0, 0);">圣遗物首选</span><strong style="color: rgb(188, 106, 87);">魔女/追忆四件套</strong><span style="color: rgb(0, 0, 0);">，也可以通过</span><strong style="color: rgb(188, 106, 87);">2魔女+2精通</strong><span style="color: rgb(0, 0, 0);">散搭。</span></p><p><span style="color: rgb(0, 0, 0);">魔女4件套虽然只能享受</span><strong style="color: rgb(188, 106, 87);">1层加火伤效果</strong><span style="color: rgb(0, 0, 0);">，但提供了</span><strong style="color: rgb(188, 106, 87);">15%的蒸发系数</strong><span style="color: rgb(0, 0, 0);">加成，这个加成为</span><strong style="color: rgb(188, 106, 87);">固定提升</strong><span style="color: rgb(0, 0, 0);">，不会参与精通数值转为伤害加成的稀释</span><em style="color: rgb(127, 127, 127);">(精通越高，数值提升越少)</em><span style="color: rgb(0, 0, 0);">，挺实用。</span></p><p><span style="color: rgb(0, 0, 0);">追忆4件套以15点元素能量牺牲换取50%的AZ伤害加成，虽然</span><strong style="color: rgb(188, 106, 87);">AZ时伤害要比魔女高，但是少了Q的伤害</strong><span style="color: rgb(0, 0, 0);">，且在续航方面的表现不如4魔女，各有各的特色。作为前期萌新玩家可以考虑追忆4件套，和它一起的是绝缘套，也是很多辅助可用的圣遗物，泛用性不错。然后</span><strong style="color: rgb(188, 106, 87);">若是携带4追忆时，节约资源可以不用升级Q</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><span style="color: rgb(0, 0, 0);">如果有散件较好的[2魔女+2乐团/饰金/乐园]也是不错选择。同等词条下2+2也仅仅比4魔女少2~3词条左右的差距。 </span></p><p><span style="color: rgb(0, 0, 0);">时之沙可以根据携带的武器选择，</span><strong style="color: rgb(188, 106, 87);">匣里默认生命沙</strong><span style="color: rgb(0, 0, 0);">，</span><strong style="color: rgb(188, 106, 87);">其他武器默认精通沙</strong><span style="color: rgb(0, 0, 0);">；也可以根据自身副词条选择，</span><strong style="color: rgb(188, 106, 87);">副词条生命比精通多选择精通沙，反之生命沙</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><strong style="color: rgb(188, 106, 87);">空之杯永远都是火伤杯为最优解</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><span style="color: rgb(0, 0, 0);">理之冠可以根据自身面板选择暴击率/暴击伤害。就个人认为，</span><strong style="color: rgb(188, 106, 87);">胡桃的暴击率最好是70%+才玩的舒服</strong><span style="color: rgb(0, 0, 0);">。</span></p></div></div><div class="ql-fold"><div class="ql-fold-title"><div class="ql-fold-title-content"><h2><span style="color: rgb(161, 25, 26);">❀手法建议</span></h2></div></div><div class="ql-fold-content"><p><strong style="color: rgb(188, 106, 87);">0命</strong><em style="color: rgb(127, 127, 127);">(未解锁命之座)</em><span style="color: rgb(0, 0, 0);">时可以通过</span><strong style="color: rgb(188, 106, 87);">跳跃取消Z的后摇</strong><span style="color: rgb(0, 0, 0);">但是跳跃自身又有后摇，因此想要手感最优可以考虑补1命</span><em style="color: rgb(127, 127, 127);">(命之座第一层)</em><span style="color: rgb(0, 0, 0);">。</span></p><p><strong style="color: rgb(188, 106, 87);">1命</strong><span style="color: rgb(0, 0, 0);">的效果是Z时不消耗体力，可以通过</span><strong style="color: rgb(188, 106, 87);">冲刺来取消Z的后摇</strong><span style="color: rgb(0, 0, 0);">。一般情况下Z+冲刺要比Z+跳跃在E状态期间整体打出的Z次数与总伤害都要高。</span></p><p><span style="color: rgb(0, 0, 0);"> </span></p><p><span style="color: rgb(0, 0, 0);">Z跳跃/冲刺手法一般可以是AZ，AAZ，或者AAAZ。AZ的瞬间伤害高，AAZ的整体伤害高，AAAZ虽然伤害不如AZ/AAZ，但是体力不会消耗很多，保证够用，且AAAZ也可以用于部分消火挂水的场合以至胡桃蒸发效率最大化，类似AAAAZ也是同理。当然可以根据自己的习惯来练习手法。伤害高不高无所谓，打的舒服才是最关键。</span></p><p><span style="color: rgb(0, 0, 0);"> </span></p><p><strong style="color: rgb(188, 106, 87);">0命手感稍差，推荐1命为主</strong><span style="color: rgb(0, 0, 0);">。1命Z时不消耗体力，大大优化了胡桃AZ冲刺时的流畅感，使之AZ闪避次数也AZ跳跃要多，同样伤害也要高。且即使在没有体力时也可以施放Z+跳跃的手法，不会出现无体时Z打不出来的尴尬场面。</span></p><p><span style="color: rgb(0, 0, 0);"> </span></p><p><strong style="color: rgb(161, 25, 26);">◈</strong><strong style="color: rgb(188, 106, 87);">所以武器命座抽取建议是优先选择1命再考虑护摩。当然已习惯AZ跳跃手法/想提高上限</strong><em style="color: rgb(127, 127, 127);">(或核爆)</em><strong style="color: rgb(188, 106, 87);">可以先考虑护摩。</strong></p></div></div><div class="ql-fold"><div class="ql-fold-title"><div class="ql-fold-title-content"><h2><span style="color: rgb(161, 25, 26);">❀阵容搭配</span></h2></div></div><div class="ql-fold-content"><p><strong style="color: rgb(127, 127, 127);"><em>PS：配装以及手法都在图中。</em></strong></p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/fbf2677531582eacdc04365036e38a6c_4248847996168718966.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p>通过上文角色机制概要得知，<strong style="color: rgb(188, 106, 87);">胡桃</strong>需通过蒸发反应来稳定提升自身的输出能力，所以建议绑定一位可后台持续挂水的角色，<strong style="color: rgb(188, 106, 87);">行秋</strong>的挂水能力可让胡桃稳定且持续触发蒸发使其伤害收益最佳化。然后胡桃的半血机制，并不适配治疗型角色，所以建议绑定提供护盾的角色来保证其续航能力，<strong style="color: rgb(188, 106, 87);">钟离</strong>的护盾强度、持久度都是最出色的，且护盾提供的全系减抗也可使胡桃的输出进一步得到提升，是盾辅中的最佳选择，于是<strong style="color: rgb(188, 106, 87);">胡行钟体系便由此诞生</strong>，以下阵容也都会围绕胡行钟体系来展开。</p><p>然后对于胡桃而言优先考虑的属性为：暴击、暴伤、火伤、精通、生命。在伤害收益这个板块，这几个属性可通过阵容搭配、武器、圣遗物来调整。</p><p>而第四人的选择颇多，除了上图的6位角色，罗莎莉亚<em style="color: rgb(127, 127, 127);">(提供暴击率)</em>、砂糖<em style="color: rgb(127, 127, 127);">(提供精通)</em>这类提供增伤的角色也都可与之搭配。所以胡行钟体系的<strong style="color: rgb(188, 106, 87);">第四人是可以针对胡桃的属性缺漏来进行选择</strong>，比如生命较低可搭配水系角色凑双水共鸣；精通属性较低可搭配阿贝多、砂糖、讨龙+4教官的凝光、携带武器终末嗟叹之诗的夜兰/甘雨来弥补。</p><p><br></p><p><strong style="color: rgb(64, 114, 175);">❀---------</strong></p><p><span style="color: rgb(0, 0, 0);">首先是都具有且适配胡桃输出机制的夜兰与行秋的挂水效率结论：</span><strong style="color: rgb(64, 114, 175);">2命的夜兰与6命的行秋能完全压住胡桃的火</strong><span style="color: rgb(0, 0, 0);">，而</span><strong style="color: rgb(64, 114, 175);">单个0命夜兰或0命行秋可能</strong><span style="color: rgb(0, 0, 0);">会因为胡桃E伤害机制里的「血梅香」而出现</span><strong style="color: rgb(64, 114, 175);">“反向打工”</strong><em style="color: rgb(127, 127, 127);">(胡桃挂火让水系角色蒸发)</em><span style="color: rgb(0, 0, 0);">的情况，需要一定手法，因此是可以考虑</span><strong style="color: rgb(64, 114, 175);">双水阵容：</strong></p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/ed6a6a98177e995343af150bf30d54b4_7613609960025254440.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><span style="color: rgb(0, 0, 0);">这套阵容可以说是目前为止胡桃的</span><strong style="color: rgb(64, 114, 175);">最终毕业阵容</strong><em style="color: rgb(127, 127, 127);">(个人见解)</em><span style="color: rgb(0, 0, 0);">，双水的加入完全不用担心反向打工的问题。</span></p><p><span style="color: rgb(0, 0, 0);">双水共鸣增加的25%生命值可提高胡桃E转换的攻击力，钟离的护盾全程保驾护航，加上全元素减抗，以及</span><strong style="color: rgb(64, 114, 175);">夜兰和行秋的后台伤害与持续挂水的触发机制都可依靠胡桃的AZ触发</strong><span style="color: rgb(0, 0, 0);">，使胡桃可以稳定触发蒸发反应实现全面覆盖。</span></p><p><span style="color: rgb(0, 0, 0);">夜兰的</span><strong style="color: rgb(64, 114, 175);">「固有天赋·妙转随心」</strong><span style="color: rgb(0, 0, 0);">提供的伤害加成也会进一步增加胡桃的输出能力，在没有武器若水时，</span><strong style="color: rgb(64, 114, 175);">终末嗟叹之诗</strong><span style="color: rgb(0, 0, 0);">会是夜兰的最佳选择，提供精通与攻击加成，不管是双水共鸣给予的生命加成还是终末给予的精通加成，对于胡桃而言都会有平稳的提升，所以该阵容就个人认为是胡桃的最终毕业阵容，主要属性分配会比较均衡。</span></p><p><span style="color: rgb(0, 0, 0);">上图中行秋推荐了绿剑，建议</span><strong style="color: rgb(64, 114, 175);">钟离和夜兰携带西风系列的武器时行秋再考虑绿剑、雾切</strong><span style="color: rgb(0, 0, 0);">这类输出型的武器，一般来说，祭礼剑会更通用。</span></p><p><br></p><p><strong style="color: rgb(64, 114, 175);">❀---------</strong></p><p><span style="color: rgb(0, 0, 0);">如果只有一个行秋或者夜兰时，可以考虑：</span></p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/ef302082fe965e3c151e3adf99210d47_195660097740408184.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><span style="color: rgb(0, 0, 0);">由于莫娜Q的泡影在非永冻队中都是一碰即破，所以增伤时间大约只有6秒，实战中基本</span><strong style="color: rgb(64, 114, 175);">胡桃开E就会戳破泡影</strong><span style="color: rgb(0, 0, 0);">，然后胡桃持续使用AZ手法时，</span><strong style="color: rgb(64, 114, 175);">前5次AZ</strong><span style="color: rgb(0, 0, 0);">都能享受该增伤，后续的AZ就享受不到了。</span></p><p><em style="color: rgb(127, 127, 127);">Tips：面对自带护盾的敌人，如丘丘王系列，雷锤开盾，冰胖开盾等，在敌人护盾没有消失前，泡影不会破，增伤时间可完美覆盖胡桃驻场时间。</em></p><p><span style="color: rgb(0, 0, 0);">该阵容虽然</span><strong style="color: rgb(64, 114, 175);">整体伤害不如胡行钟夜</strong><span style="color: rgb(0, 0, 0);">，可以算是下位替代，但莫娜的Q可以起到爆发作用，用来享受胡桃的短时高伤体验还是蛮不错的。</span></p><p><strong style="color: rgb(64, 114, 175);">若是搭配0命的行秋或夜兰可能会出现反向打工</strong><span style="color: rgb(0, 0, 0);">，若出现敌人身上一直是火附着时，</span><strong style="color: rgb(64, 114, 175);">可让胡桃使用AAAZ来消火挂水</strong><span style="color: rgb(0, 0, 0);">，当行秋1命/夜兰2命以后则就不会出现反向打工的问题。</span></p><p><strong style="color: rgb(64, 114, 175);">莫娜</strong><span style="color: rgb(0, 0, 0);">若是作为“工具人”入驻，</span><strong style="color: rgb(64, 114, 175);">可以不用拉练度，武器携带一本讨龙足矣</strong><span style="color: rgb(0, 0, 0);">。唯一要求就是</span><strong style="color: rgb(64, 114, 175);">充能</strong><span style="color: rgb(0, 0, 0);">尽可能达到</span><strong style="color: rgb(64, 114, 175);">230%+</strong><span style="color: rgb(0, 0, 0);">，每次队伍循环能施放Q最主要。</span></p><p><br></p><p><strong style="color: rgb(169, 123, 71);">❀---------</strong></p><p><span style="color: rgb(0, 0, 0);">以上是胡桃的双水体系，可以补足胡桃的生命属性。而目前适配胡桃的</span><strong style="color: rgb(169, 123, 71);">双岩体系</strong><span style="color: rgb(0, 0, 0);">的搭配基本是跑向胡桃的</span><strong style="color: rgb(169, 123, 71);">火伤乘区以及精通乘区</strong><span style="color: rgb(0, 0, 0);">。</span></p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/4de13138c8ffbc1985dd779284b05965_6634628137287740061.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><strong style="color: rgb(169, 123, 71);">阿贝多</strong>有着不俗的后台伤害以及施放Q后<strong style="color: rgb(169, 123, 71);">125的全队精通加成</strong>，无论是爆发能力还是收尾能力都是不弱的，而且阿贝多的<strong style="color: rgb(169, 123, 71);">持续后台伤害可弥补胡桃真空期的输出空挡</strong>。胡行钟阿作为老一套胡桃的主力阵容至今仍然可用。</p><p><br></p><p><strong style="color: rgb(169, 123, 71);">❀---------</strong></p><p>没有阿贝多也可以用凝光替代。</p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/1cb874b92118d2283de76ad257933bce_970767947133881737.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p><strong style="color: rgb(169, 123, 71);">讨龙+教官</strong>的凝光虽然没有输出能力，但是凭借讨龙+教官的加成，也能让<strong style="color: rgb(169, 123, 71);">胡桃打出高额伤害</strong>。主要凝光A两下配合行秋的Q就可稳定触发结晶反应，对于触发教官套效果而言是挺省心的。作为<strong style="color: rgb(169, 123, 71);">工具人</strong>的凝光同莫娜一样，<strong style="color: rgb(169, 123, 71);">可以不用练，携带讨龙+教官即可</strong>。</p><p>若是想以<strong style="color: rgb(169, 123, 71);">速切爆发</strong>型的凝光入驻也是可以的，但挺<strong style="color: rgb(169, 123, 71);">建议凝光解锁6命后再考虑</strong>比较好，直接E穿屏QZ退场即可。</p><p> </p><p>不管是阿贝多还是教官凝光，都是为了<strong style="color: rgb(169, 123, 71);">弥补胡桃的精通乘区</strong>，基本在胡桃精通属性低时收益较大<em style="color: rgb(127, 127, 127);">(面板上精通属性100左右时)</em>，就比如携带护摩+生命沙这种情况，除此以外，<strong style="color: rgb(169, 123, 71);">也可通过搭配砂糖/携带终末的甘雨来解决精通属性低</strong>的情况。</p><p><br></p><p><strong style="color: rgb(46, 117, 181);">❀---------</strong></p><p>上述阵容中，若是手速快可能会导致循环时会在行秋出场时出现卡CD的情况，<strong style="color: rgb(46, 117, 181);">体验循环更流畅可以搭配一个2命的重云</strong><em style="color: rgb(127, 127, 127);">(减CD效果)</em>，<strong style="color: rgb(46, 117, 181);">或者应用于需破水系护盾的环境</strong>，如水深渊法师、水使徒<em style="color: rgb(127, 127, 127);">(深渊使徒·激流)</em>这类环境，重云的E冰附魔配合钟离A的手感，破盾速度也是挺不错的。<strong style="color: rgb(46, 117, 181);">重云同理凝光和莫娜，可作为工具人进驻无需练度</strong>，或者作为速切爆发型的副C入驻都可。</p><p><br></p><p><strong style="color: rgb(165, 83, 79);">❀---------</strong></p><p><strong style="color: rgb(165, 83, 79);">没有钟离时</strong>并不会优先推荐抽取胡桃，但为了XP抽取又想玩胡桃可以考虑以下阵容。</p><p>目前的盾辅除了钟离以外，适配胡桃的有<strong style="color: rgb(165, 83, 79);">托马、4命烟绯、迪奥娜、莱依拉</strong>，辛焱、诺艾尔虽可提供护盾，但是其真空期过长问题并不是很适配。</p><p>通过<strong style="color: rgb(165, 83, 79);">[胡桃+行秋+钟离+夜兰]</strong>双水体系就可完美的把<strong style="color: rgb(165, 83, 79);">钟离替换为托马/烟绯/迪奥娜/莱依拉</strong>。</p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/bef57ed46d5d467e645678165f7065f0_779159582446031647.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p>不管是<strong style="color: rgb(165, 83, 79);">托马</strong>还是<strong style="color: rgb(165, 83, 79);">烟绯</strong>，都需<strong style="color: rgb(165, 83, 79);">注重自身的回能，核心的护盾机制都需施放Q</strong>，需每次循环尽量都能施放Q最佳。主要区别在于命座要求，托马本身是盾辅，对于命座没有特别要求，2命增加护盾持续时间、4命缓解回能，6命提供AZ伤害加成，都是锦上添花的提升。而烟绯本身是输出，能提供护盾的机制只有在4命，所以<strong style="color: rgb(165, 83, 79);">没有4命的烟绯是进不了该阵容的</strong>。迪奥娜与莱依拉的护盾机制在E，无需Q启动，对于充能而言无多大要求。</p><p>而上图阵容，即使没有钟离，在循环、续航、输出方面都是无问题的。</p><p><br></p><p><strong style="color: rgb(165, 83, 79);">❀---------</strong></p><p>其次托马与烟绯都是火系角色，可以搭配携带翠绿4件套的风系角色来实现扩火减少敌人火炕从而实现为胡桃增伤的目的。</p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/cf1aa5695cceab092f3cc48aae8513af_5196143795354630113.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p>这套阵容的<strong style="color: rgb(165, 83, 79);">最大短板就是翠绿4件套</strong>效果<strong style="color: rgb(165, 83, 79);">减少抗性</strong><span style="color: rgb(0, 0, 0);">的时间</span><strong style="color: rgb(165, 83, 79);">只有8秒</strong><span style="color: rgb(0, 0, 0);">，胡桃E状态没结束4翠绿的减抗效果就会消失。</span><strong style="color: rgb(165, 83, 79);">砂糖也完全可替换为万叶</strong><span style="color: rgb(0, 0, 0);">，都可携带4翠绿实现减抗，只是各自机制提供的属性乘区不一样，</span><strong style="color: rgb(165, 83, 79);">砂糖主要是给精通，万叶主要是给元素伤害</strong><span style="color: rgb(0, 0, 0);">。</span></p><p><strong style="color: rgb(165, 83, 79);">上图手法</strong><span style="color: rgb(0, 0, 0);">若是把烟绯换成托马相对来说是不好触发火扩散的，</span><strong style="color: rgb(165, 83, 79);">烟绯</strong><span style="color: rgb(0, 0, 0);">毕竟是远程角色，可以</span><strong style="color: rgb(165, 83, 79);">后撤一下防止行秋E的雨帘剑挂水</strong><span style="color: rgb(0, 0, 0);">，这一步很关键。若想</span><strong style="color: rgb(165, 83, 79);">稳定省心</strong><span style="color: rgb(0, 0, 0);">触发，可使用</span><strong style="color: rgb(165, 83, 79);">以下手法：</strong></p><p><span style="color: rgb(0, 0, 0);">托马/烟绯EQ→风角色扩散→行秋EQE→胡桃EAZ冲刺/跳跃...</span></p><p>优先给敌人施加火附着再让风系角色来进行火扩散，可以稳定降低敌人火抗，但由于4翠绿效果持续时间只有8秒，基本胡桃出场后只有<strong style="color: rgb(165, 83, 79);">3次AZ能享受</strong>到4翠绿带来的减抗即增伤的效果，不过总归是省心和稳定。</p><p><br></p><p><strong style="color: rgb(188, 106, 87);">❀---------</strong></p><p><span style="color: rgb(0, 0, 0);">最后来一个</span><strong style="color: rgb(188, 106, 87);">娱乐玩法</strong><span style="color: rgb(0, 0, 0);">推荐。</span></p><p>胡桃半血时<strong style="color: rgb(188, 106, 87);">Q有着不错的倍率</strong>，加上<strong style="color: rgb(188, 106, 87);">火触发冰</strong>可以打出<strong style="color: rgb(188, 106, 87);">2倍伤害</strong>的融化反应，因此胡桃也有核爆的玩法，仅限娱乐，只为欣赏大数字解压。</p><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/8bf2755182fdca40e62bf9abbbcca9d9_4366483292663071172.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div><p>手法简单，<strong style="color: rgb(188, 106, 87);">按照上图出场顺序施放技能即可</strong>。绫华的E是强冰附着+Q的高频冰附着完全能压制万叶Q火领域的附着频率<em style="color: rgb(127, 127, 127);">(觉着麻烦万叶可直接E不放Q即可)</em>，唯一要注意的是<strong style="color: rgb(188, 106, 87);">胡桃需要半血状态收益最佳</strong>！命座方面，班尼特5命、万叶2命、绫华4命、胡桃3、5命可提高其上限。</p><p>亦或者在没有万叶和绫华时，可以使用<strong style="color: rgb(188, 106, 87);">[胡桃+班尼特+砂糖+莫娜]</strong>，其出场顺序/手法同理：</p><p>班尼特Q→砂糖EE→莫娜EQ→胡桃EQ。班尼特配装与上图一样，砂糖4翠绿+精通武器，莫娜讨龙+4教官。</p><p><em style="color: rgb(127, 127, 127);">Tips：选择对象也有技巧，像古岩龙蜥、岩龙蜥、岩使游击兵等岩属性敌人时，班尼特可携带磐岩4件套捡火结晶来提高伤害。</em></p><p><strong style="color: rgb(188, 106, 87);">❀---------</strong></p></div></div><div class="ql-divider" data-type="line_3"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/e7047588e912d60ff87a975e037c7606.png"></div><h1><br></h1><h1 class="ql-align-center"><span style="color: rgb(161, 25, 26);">·【总结】·</span></h1><p class="ql-align-center"><br></p><p><strong style="color: rgb(237, 125, 49);">⭐胡桃的主要输出方式是施放E后进入E状态下的重击。最佳输出状态是自身生命值≤50%时。Q具有治疗自身的机制与高倍率伤害，可以用于收割/爆发/核爆玩法。常规天赋升级建议AE同时升级最后Q。 </strong></p><p><strong style="color: rgb(79, 104, 171);">⭐武器可在护摩、赤沙、匣里、和璞鸢、决斗、千岩</strong><em style="color: rgb(127, 127, 127);">(璃月队)</em><strong style="color: rgb(79, 104, 171);">、黑岩、白缨枪这些武器中选择。</strong></p><p><strong style="color: rgb(148, 18, 37);">⭐圣遗物以魔女4件套为目标，也可用4追忆，都未成型时可用2魔女+2精通</strong><em style="color: rgb(127, 127, 127);">(乐团/饰金/乐园)</em><strong style="color: rgb(148, 18, 37);">。</strong></p><p><strong style="color: rgb(144, 72, 200);">⭐拥有高频火附着机制的胡桃依靠蒸发反应来稳定提升自身的伤害，所以需搭配后台持续高频挂水的角色，行秋与夜兰都可，但单水时建议夜兰有2命；因自身有半血机制，并不适配治疗型角色，所以需搭配一位提供护盾的角色，钟离是最优选。</strong></p><p><br></p><div class="ql-divider" data-type="line_3"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/e7047588e912d60ff87a975e037c7606.png"></div><p class="ql-align-center"><br></p><p class="ql-align-center"><br></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">阴阳有序，命运无常。</strong></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">死亡难以预测，却也有它的规矩。</strong></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">记住了，无论何时何地，无论有何原因，</strong></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">人都不该轻易挑衅「死」之一事。</strong></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">唯有认识它、尊重它，</strong></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">才能明白活着的价值。</strong></p><p class="ql-align-center"><strong style="color: rgb(188, 106, 87);">——胡桃</strong></p><p class="ql-align-center"><span style="color: rgb(45, 107, 112);"> </span></p><div class="ql-divider" data-type="line_3"><img src="https://mihoyo-community-web.oss-cn-shanghai.aliyuncs.com/upload/2021/01/05/e7047588e912d60ff87a975e037c7606.png"></div><p class="ql-align-center"><br></p><h2 class="ql-align-center"><strong style="color: rgb(161, 25, 26);">·【END】·</strong></h2><h2 class="ql-align-center"><span style="color: rgb(127, 127, 127);">-感谢观看-</span></h2><div class="ql-image"><div class="ql-image-box"><img src="https://upload-bbs.miyoushe.com/upload/2023/02/03/255079205/affa15e44b7eb4c2359e3464c5549715_8939144491314605693.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="mhy-article-page__footer">
+            <div class="mhy-article-page-bottom">
+              <div class="mhy-topic-label-selector">
+                
+                <div class="mhy-topic-label mhy-topic-label-selector__item">
+                  <a
+                    href=""
+                    class="mhy-router-link mhy-topic-label__link"
+                    target="_blank"
+                  >
+                    <span>阵容推荐</span>
+                  </a>
+                </div>
+                
+                <div class="mhy-topic-label mhy-topic-label-selector__item">
+                  <a
+                    href=""
+                    class="mhy-router-link mhy-topic-label__link"
+                    target="_blank"
+                  >
+                    <span>角色攻略</span>
+                  </a>
+                </div>
+                
+                <div class="mhy-topic-label mhy-topic-label-selector__item">
+                  <a
+                    href=""
+                    class="mhy-router-link mhy-topic-label__link"
+                    target="_blank"
+                  >
+                    <span>胡桃</span>
+                  </a>
+                </div>
+                
+                <div class="mhy-topic-label mhy-topic-label-selector__item">
+                  <a
+                    href=""
+                    class="mhy-router-link mhy-topic-label__link"
+                    target="_blank"
+                  >
+                    <span>原神观测枢</span>
+                  </a>
+                </div>
+                
+                <div class="mhy-topic-label mhy-topic-label-selector__item">
+                  <a
+                    href=""
+                    class="mhy-router-link mhy-topic-label__link"
+                    target="_blank"
+                  >
+                    <span>原神3.4攻略征集</span>
+                  </a>
+                </div>
+                
+              </div>
+              <!-- <div class="mhy-button mhy-article-page__report mhy-button-default"><button class="mhy-button__button">举报</button></div> -->
+            </div>
+
+            <div class="mhy-article-page-user-data">
+              <!-- <div class="mhy-article-page-user-data__item">
+                <div class="mhy-heart-click">
+                  <svg class="mhy-symbol-icon mhy-heart-click__icon"><use xlink:href="#icon-dianzanpc"></use></svg>
+                  <span>3733</span>
+                </div>
+              </div>
+              <div class="mhy-article-page-user-data__item">
+                <svg class="mhy-symbol-icon"><use xlink:href="#icon-shoucang"></use></svg> <span>2968</span>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="logo">Created By Yunzai-Bot</div> -->
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="/root/Yunzai-Bot/plugins/xianxin-plugin/resources/html/mysDetail/qrcode.min.js"
+  ></script>
+  <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "https://bbs.mihoyo.com/ys/article/35191586", // 内容可以是文字，链接，邮箱
+      width: 130, //设置宽度
+      height: 130, // 设置高度
+      correctLevel: QRCode.CorrectLevel.H, // 设置容错级别，上面有介绍
+    });
+  </script>
+</html>

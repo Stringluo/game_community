@@ -1,0 +1,233 @@
+{
+	"2022": {
+		"12": {
+			"uid": 210499075,
+			"region": "cn_gf01",
+			"account_id": 305410994,
+			"nickname": "圣物水套羽毛",
+			"date": "2023-02-18",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 12,
+			"data_last_month": 11,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 7666,
+				"current_mora": 5317870,
+				"last_primogems": 5774,
+				"last_mora": 5390150,
+				"current_primogems_level": 4,
+				"primogems_rate": 32,
+				"mora_rate": -1,
+				"group_by": [
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 2470,
+						"percent": 33
+					},
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 2020,
+						"percent": 27
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 1800,
+						"percent": 24
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 850,
+						"percent": 11
+					},
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 120,
+						"percent": 1
+					},
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 100,
+						"percent": 1
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 306,
+						"percent": 3
+					}
+				]
+			},
+			"lantern": false,
+			"isUpdate": true
+		}
+	},
+	"2023": {
+		"1": {
+			"uid": 210499075,
+			"region": "cn_gf01",
+			"account_id": 305410994,
+			"nickname": "圣物水套羽毛",
+			"date": "2023-02-18",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 1,
+			"data_last_month": 12,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 8208,
+				"current_mora": 7515579,
+				"last_primogems": 7666,
+				"last_mora": 5317870,
+				"current_primogems_level": 4,
+				"primogems_rate": 7,
+				"mora_rate": 41,
+				"group_by": [
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 2209,
+						"percent": 27
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 1780,
+						"percent": 22
+					},
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 1630,
+						"percent": 20
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 1000,
+						"percent": 13
+					},
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 970,
+						"percent": 11
+					},
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 510,
+						"percent": 6
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 109,
+						"percent": 1
+					}
+				]
+			},
+			"lantern": false,
+			"isUpdate": true
+		},
+		"2": {
+			"uid": 210499075,
+			"region": "cn_gf01",
+			"account_id": 305410994,
+			"nickname": "圣物水套羽毛",
+			"date": "2023-02-18",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 2,
+			"data_last_month": 1,
+			"day_data": {
+				"current_primogems": 360,
+				"current_mora": 153890,
+				"last_primogems": 400,
+				"last_mora": 388524
+			},
+			"month_data": {
+				"current_primogems": 4424,
+				"current_mora": 3183670,
+				"last_primogems": 8208,
+				"last_mora": 7515579,
+				"current_primogems_level": 2,
+				"primogems_rate": -46,
+				"mora_rate": -57,
+				"group_by": [
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 1440,
+						"percent": 33
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 1080,
+						"percent": 25
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 1050,
+						"percent": 24
+					},
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 424,
+						"percent": 9
+					},
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 370,
+						"percent": 8
+					},
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 0,
+						"percent": 0
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 60,
+						"percent": 1
+					}
+				]
+			},
+			"lantern": false
+		}
+	}
+}

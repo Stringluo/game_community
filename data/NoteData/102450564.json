@@ -1,0 +1,147 @@
+{
+	"2022": {
+		"12": {
+			"uid": 102450564,
+			"region": "cn_gf01",
+			"account_id": 161713294,
+			"nickname": "洛",
+			"date": "2023-02-19",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 12,
+			"data_last_month": 11,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0,
+				"current_primogems_level": 0,
+				"primogems_rate": 0,
+				"mora_rate": 0,
+				"group_by": []
+			},
+			"lantern": false,
+			"isUpdate": true
+		}
+	},
+	"2023": {
+		"1": {
+			"uid": 102450564,
+			"region": "cn_gf01",
+			"account_id": 161713294,
+			"nickname": "洛",
+			"date": "2023-02-19",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 1,
+			"data_last_month": 12,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0,
+				"current_primogems_level": 0,
+				"primogems_rate": 0,
+				"mora_rate": 0,
+				"group_by": []
+			},
+			"lantern": false,
+			"isUpdate": true
+		},
+		"2": {
+			"uid": 102450564,
+			"region": "cn_gf01",
+			"account_id": 161713294,
+			"nickname": "洛",
+			"date": "2023-02-19",
+			"month": 2,
+			"optional_month": [
+				12,
+				1,
+				2
+			],
+			"data_month": 2,
+			"data_last_month": 1,
+			"day_data": {
+				"current_primogems": 0,
+				"current_mora": 0,
+				"last_primogems": 0,
+				"last_mora": 0
+			},
+			"month_data": {
+				"current_primogems": 600,
+				"current_mora": 183000,
+				"last_primogems": 0,
+				"last_mora": 0,
+				"current_primogems_level": 1,
+				"primogems_rate": 60000,
+				"mora_rate": 18300000,
+				"group_by": [
+					{
+						"action_id": 5,
+						"action": "邮件奖励",
+						"num": 300,
+						"percent": 50
+					},
+					{
+						"action_id": 6,
+						"action": "活动奖励",
+						"num": 300,
+						"percent": 50
+					},
+					{
+						"action_id": 3,
+						"action": "每日活跃",
+						"num": 0,
+						"percent": 0
+					},
+					{
+						"action_id": 4,
+						"action": "深境螺旋",
+						"num": 0,
+						"percent": 0
+					},
+					{
+						"action_id": 1,
+						"action": "冒险奖励",
+						"num": 0,
+						"percent": 0
+					},
+					{
+						"action_id": 2,
+						"action": "任务奖励",
+						"num": 0,
+						"percent": 0
+					},
+					{
+						"action_id": 0,
+						"action": "其他",
+						"num": 0,
+						"percent": 0
+					}
+				]
+			},
+			"lantern": false
+		}
+	}
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="#" />
+  <link rel="preload" href="../../../../../plugins/ap-plugin/resources/common/font/HYWH-65W.woff" as="font" type="font/woff">
+  <link rel="preload" href="../../../../../plugins/ap-plugin/resources/common/font/NZBZ.woff" as="font" type="font/woff">
+  <link rel="preload" href="../../../../../plugins/ap-plugin/resources/common/font/tttgbnumber.woff" as="font" type="font/woff">
+  <link rel="stylesheet" type="text/css" href="../../../../../plugins/ap-plugin/resources/common/common.css" />
+  <title>yenai-plugin</title>
+  
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../../../../plugins/ap-plugin/resources//help/help.css"
+/>
+
+</head>
+
+<body class="elem-cryo default-mode " style=transform:scale(2)>
+  <div class="container elem-bg" id="container">
+     
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">绘图</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">#绘图</span>[<span class="cmd">正面tag</span>]  [<span class="strong">横图</span>|<span class="strong">方图</span>] [<span class="strong">步数</span><span class="cmd">30</span>] [<span class="strong">种子</span><span class="cmd">1234567</span>] [<span class="strong">强度</span><span class="cmd">0.55</span>] [<span class="strong">自由度</span><span class="cmd">7</span>] [<span class="strong">接口</span><span class="cmd">2</span>] [<span class="cmd">3</span><span class="strong">张</span>] [<span class="cmd">采样器</span>] [<span class="strong">ntags=</span><span class="cmd">反面tag</span>] [<span class="cmd">指定图片</span>]</p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 竖线表示两边只能选一，方括号中为可选内容(使用时不带方括号)，可自由组合，除<span class="strong">ntags需要放在命令尾部</span>以外，其他参数顺序不限。参数含义如下：</li>
+            
+            <li><span class="strong">正面tag</span>：希望出现的特征，如 pink hair</li>
+            
+            <li><span class="strong">反面tag</span>：不希望出现的特征，例如 nsfw</li>
+            
+            <li><span class="strong">横图</span>、<span class="strong">方图</span>：指定图片的比例，未指定时默认为竖向</li>
+            
+            <li><span class="strong">步数</span>：指定迭代次数，默认为40，范围1~99</li>
+            
+            <li><span class="strong">种子</span>：使用指定的种子生成的图片具有较高的一致性</li>
+            
+            <li><span class="strong">强度</span>：仅在以图生图时有效：指定偏离原图的程度。默认0.6，范围0~0.99</li>
+            
+            <li><span class="strong">自由度</span>： 默认11，范围0~99</li>
+            
+            <li><span class="strong">接口</span>：指定使用某个接口绘图。不指定时将使用默认值</li>
+            
+            <li><span class="cmd">?</span><span class="strong">张</span>：批量绘制若干张图片。最大10张</li>
+            
+            <li><span class="strong">采样器</span>：用于指定本次绘图使用的采样器，如Euler a, DPM2 a Karras, DPM2 a, DPM2等</li>
+            
+            <li><span class="strong">指定图片</span>：当符合以下条件之一，判断此次绘图为<span class="strong">以图生图</span></li>
+            
+            <li> ①绘图命令<span class="cmd">附带了图片</span></li>
+            
+            <li> ②绘图命令<span class="cmd">引用回复了图片</span></li>
+            
+            <li> ③绘图命令<span class="cmd">艾特了某个用户</span>（将基于其头像生成图片）</li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">二次元的我</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">二次元的我</span></p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 随机组合一组属性作为tag，绘制对应图片。属性每日0点刷新</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#二次元的我</span></p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 随机组合一组属性作为tag，使用头像以图生图。 </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">%二次元的我</span></p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 有可用逆推接口时，随机组合一组属性作为tag，并解析头像的tag，将二者组合作为tag来以文生图; 没有可用逆推接口时，效果与<span class="strong">#二次元的我</span>相同</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">/二次元的我</span></p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 有可用逆推接口时，解析头像的tag，以文生图绘制对应图片; 没有可用逆推接口时，效果与<span class="strong">二次元的我</span>相同</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p> [<span class="strong">全局</span>]<span class="strong">刷新二次元的我</span>[<span class="cmd">@用户</span>]</p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 刷新全部用户或指定用户的属性</li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">图片处理</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">#大清晰术</span>[<span class="strong">二重唱</span>|<span class="strong">三重唱</span>|<span class="strong">四重唱</span>] [<span class="strong">强力术式</span>|<span class="strong">中等术式</span>|<span class="strong">不变式</span>|<span class="strong">原式</span>] </p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 图片超分和降噪。可对图片回复该命令，或将命令与图片一同发送</li>
+            
+            <li> 竖线表示不能共存，方括号中为可选内容(使用时不带方括号)</li>
+            
+            <li><span class="cmd">?</span><span class="strong">重唱</span>：指定放大倍数，默认2倍。图片过大时，将强制使用2倍放大</li>
+            
+            <li><span class="cmd">?</span><span class="strong">式</span>：指定降噪等级</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#鉴赏</span>：逆推图片的tag。</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#鉴定图片</span>：检查图片是否为AI绘制的。</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#抠图</span>：去除图片背景。</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#图片动漫化</span>：将照片处理为动漫风格。</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#卢浮宫</span>[<span class="strong">精细</span>|<span class="strong">一般</span>|<span class="strong">稍粗</span>|<span class="strong">极粗</span>|<span class="strong">浮雕</span>]  [<span class="strong">降噪</span>]  [<span class="strong">水印</span>]  [<span class="strong">kiss</span>]  [<span class="strong">初回</span>]  [<span class="strong">线迹轻重</span><span class="cmd">80~126</span>]  [<span class="strong">调子数量</span><span class="cmd">20~200</span>] </p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 一个优雅的图片风格化滤镜。</li>
+            
+            <li> 建议上传<span class="strong">赛璐珞风格</span>的<span class="strong">动画截图</span>、<span class="strong">插画</span>等，效果最佳；  高清图请务必<span class="strong">关闭降噪</span>，线条更精致</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#更换背景(人物)</span>[<span class="cmd">关键词</span>]：一键更换图像中的背景或人物。</p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 请上传带人物的图像以便正常处理图像结构</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#局部重绘</span>[<span class="cmd">关键词</span>]：将涂黑的地方重新绘制</p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 请同时上传两张图片，第一张需是原图，第二张是涂抹之后的图，请使用黑色(#000000)进行涂抹，误差值在20之内才可正常识别</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#图片转音乐</span>[<span class="cmd">时长</span>] [<span class="cmd">复杂程度</span>] [<span class="cmd">曲式</span>]：将图片转换成音频</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#二次元美学</span>[<span class="cmd">图片</span>]：为图片打个分</p>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">本地图片管理</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">#ap检索本地图片</span>[<span class="cmd">关键词</span>] [<span class="strong">第</span><span class="cmd">?</span><span class="strong">页</span>]</p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 查看已绘制并保存至本地的图片，可以精准定位几点几分谁用什么tag画了什么图。方括号内为可选内容(使用时不带方括号)</li>
+            
+            <li><span class="strong">关键词</span>：命令后附带关键词，将仅检索展示包含该关键词的本地图片</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#ap</span>[<span class="strong">删除</span>|<span class="strong">清空</span>]<span class="strong">本地图片</span><span class="cmd">关键词</span>：删除本地图片,可指定仅删除包含关键词的图片，或删除全部本地图片</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#ap查水表</span><span class="cmd">@用户</span>[<span class="strong">第</span><span class="cmd">?</span><span class="strong">页</span>] ：查看指定人绘制过的图片</p>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">其他功能</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">#看头像</span>、<span class="strong">#取图链</span>、<span class="strong">#图链模板</span></p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#ap搜图</span>[<span class="strong">阈值</span><span class="cmd">60</span>] ：以图搜图，阈值为可选参数</p>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">预设</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">#ap预设列表</span>[<span class="cmd">关键词</span>] [<span class="strong">第</span><span class="cmd">?</span><span class="strong">页</span>]</p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 查看预设列表。方括号内为可选内容(使用时不带方括号)</li>
+            
+            <li><span class="strong">关键词</span>：命令后附带关键词，将仅检索展示包含该关键词的预设</li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#ap添加预设</span><span class="cmd">预设名</span><span class="strong">=></span><span class="cmd">预设内容</span></p>
+          
+          <ul class="sub-log-ul">
+            
+            <li> 绘图时，命令中的<span class="strong">预设名</span>将会被替换为对应的<span class="strong">预设内容</span></li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#ap删除预设</span><span class="cmd">预设名</span></p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#pt列表</span>[<span class="cmd">关键词</span>] [<span class="cmd">第?页</span>] ：查看接口包含的embeddings的信息。</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#导出预设</span>：导出本机所有预设信息到云端，并生成取件码。</p>
+          
+        </li>
+        
+        <li>
+          <p><span class="strong">#导入预设</span>[<span class="cmd">取件码</span>] ： 从云端导入预设到本机。</p>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hydro-bg log-cont">
+  <div class="cont">
+    
+    <div class="cont-title">管理和配置</div>
+    
+    <div class="cont-body">
+      <ul class="log-ul">
+        
+        <li>
+          <p><span class="strong">#ap管理说明书</span></p>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+    <div class="copyright">Created By Yunzai-Bot<span class="version">v3.0.0</span> & ap-Plugin<span class="version">2.11.5</span></div>
+  </div>
+</body>
+
+</html>

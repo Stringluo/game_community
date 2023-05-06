@@ -1,0 +1,8 @@
+{
+  "importMethod": {
+    "cocoGoat": true,
+    "image": true,
+    "video": false,
+    "input": true
+  }
+}

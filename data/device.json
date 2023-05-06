@@ -1,0 +1,18 @@
+{
+  "--begin--": "该设备为随机生成，丢失后不能得到原先配置",
+  "product": "ILPP-8A1ED",
+  "device": "FDC9D",
+  "board": "40F34",
+  "brand": "7B05",
+  "model": "ILPP 1AD3",
+  "wifi_ssid": "HUAWEI-fa43ca0",
+  "bootloader": "U-boot",
+  "android_id": "IL.2986280.6948",
+  "boot_id": "638f4c40-59c3-fe89-3cae-86ecdfa504c7",
+  "proc_version": "Linux version 5.10.101-android12-44d42e11",
+  "mac_address": "2D:8A:2C:47:7D:B8",
+  "ip_address": "192.168.60.59",
+  "imei": "861928495907852",
+  "incremental": "8E18E41FB5",
+  "--end--": "修改后可能需要重新验证设备。"
+}

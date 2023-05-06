@@ -1,0 +1,1405 @@
+{
+  "uid": "181887373",
+  "name": "白蜡木希嗒",
+  "level": 58,
+  "word": "",
+  "face": "",
+  "card": "",
+  "sign": "",
+  "info": false,
+  "_mys": 1680613190855,
+  "avatars": {
+    "10000007": {
+      "name": "荧",
+      "id": 10000007,
+      "elem": "electro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 1,
+      "costume": 0,
+      "cons": 6,
+      "talent": {
+        "a": 6,
+        "e": 5,
+        "q": 6
+      },
+      "weapon": {
+        "name": "飞天御剑",
+        "level": 90,
+        "promote": 6,
+        "affix": 5
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 17.9
+            },
+            {
+              "key": "recharge",
+              "value": 5.8
+            },
+            {
+              "key": "defPlus",
+              "value": 65
+            },
+            {
+              "key": "atkPlus",
+              "value": 18
+            }
+          ]
+        },
+        "2": {
+          "name": "切落之羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "mastery",
+              "value": 72
+            },
+            {
+              "key": "atk",
+              "value": 5.3
+            },
+            {
+              "key": "defPlus",
+              "value": 42
+            }
+          ]
+        },
+        "3": {
+          "name": "雷云之笼",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "recharge",
+            "value": 51.8
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 44
+            },
+            {
+              "key": "atk",
+              "value": 8.7
+            },
+            {
+              "key": "def",
+              "value": 10.9
+            },
+            {
+              "key": "atkPlus",
+              "value": 33
+            }
+          ]
+        },
+        "4": {
+          "name": "角斗士的酣醉",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "electro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 32
+            },
+            {
+              "key": "recharge",
+              "value": 13
+            },
+            {
+              "key": "atkPlus",
+              "value": 33
+            },
+            {
+              "key": "mastery",
+              "value": 42
+            }
+          ]
+        },
+        "5": {
+          "name": "华饰之兜",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "atkPlus",
+              "value": 29
+            },
+            {
+              "key": "defPlus",
+              "value": 74
+            },
+            {
+              "key": "mastery",
+              "value": 21
+            },
+            {
+              "key": "hpPlus",
+              "value": 299
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429276,
+      "_update": 1679059310871,
+      "_talent": 1679059310871
+    },
+    "10000023": {
+      "name": "香菱",
+      "id": 10000023,
+      "elem": "pyro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 5,
+      "talent": {},
+      "weapon": {
+        "name": "「渔获」",
+        "level": 90,
+        "promote": 6,
+        "affix": 5
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "level": 20,
+          "star": 5
+        },
+        "2": {
+          "name": "切落之羽",
+          "level": 20,
+          "star": 5
+        },
+        "3": {
+          "name": "雷云之笼",
+          "level": 20,
+          "star": 5
+        },
+        "4": {
+          "name": "绯花之壶",
+          "level": 20,
+          "star": 5
+        },
+        "5": {
+          "name": "宗室面具",
+          "level": 20,
+          "star": 5
+        }
+      },
+      "_source": "mys",
+      "_time": 1680613190854,
+      "_update": 1680613190854,
+      "_talent": 1680613190854
+    },
+    "10000025": {
+      "name": "行秋",
+      "id": 10000025,
+      "elem": "hydro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 4,
+      "talent": {},
+      "weapon": {
+        "name": "祭礼剑",
+        "level": 90,
+        "promote": 6,
+        "affix": 5
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "level": 20,
+          "star": 5
+        },
+        "2": {
+          "name": "琴师的箭羽",
+          "level": 20,
+          "star": 5
+        },
+        "3": {
+          "name": "坚铜罗盘",
+          "level": 20,
+          "star": 5
+        },
+        "4": {
+          "name": "沉波之盏",
+          "level": 20,
+          "star": 5
+        },
+        "5": {
+          "name": "华饰之兜",
+          "level": 20,
+          "star": 5
+        }
+      },
+      "_source": "mys",
+      "_time": 1680613190855,
+      "_update": 1680613190855,
+      "_talent": 1680613190855
+    },
+    "10000030": {
+      "name": "钟离",
+      "id": 10000030,
+      "elem": "geo",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 1,
+      "talent": {
+        "a": 7,
+        "e": 10,
+        "q": 10
+      },
+      "weapon": {
+        "name": "黑缨枪",
+        "level": 90,
+        "promote": 6,
+        "affix": 5
+      },
+      "artis": {
+        "1": {
+          "name": "勋绩之花",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 7.8
+            },
+            {
+              "key": "atk",
+              "value": 9.9
+            },
+            {
+              "key": "hp",
+              "value": 8.7
+            },
+            {
+              "key": "atkPlus",
+              "value": 35
+            }
+          ]
+        },
+        "2": {
+          "name": "昭武翎羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "hpPlus",
+              "value": 299
+            },
+            {
+              "key": "cdmg",
+              "value": 20.2
+            },
+            {
+              "key": "defPlus",
+              "value": 21
+            },
+            {
+              "key": "hp",
+              "value": 19.2
+            }
+          ]
+        },
+        "3": {
+          "name": "金铜时晷",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hp",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 39
+            },
+            {
+              "key": "atk",
+              "value": 14
+            },
+            {
+              "key": "hpPlus",
+              "value": 478
+            },
+            {
+              "key": "atkPlus",
+              "value": 16
+            }
+          ]
+        },
+        "4": {
+          "name": "盟誓金爵",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hp",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "atk",
+              "value": 9.9
+            },
+            {
+              "key": "atkPlus",
+              "value": 33
+            },
+            {
+              "key": "def",
+              "value": 22.6
+            },
+            {
+              "key": "cpct",
+              "value": 3.1
+            }
+          ]
+        },
+        "5": {
+          "name": "月桂的宝冠",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hp",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 6.6
+            },
+            {
+              "key": "cdmg",
+              "value": 21
+            },
+            {
+              "key": "hpPlus",
+              "value": 269
+            },
+            {
+              "key": "atkPlus",
+              "value": 33
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429275,
+      "_update": 1680613190853,
+      "_talent": 1679059310871
+    },
+    "10000037": {
+      "name": "甘雨",
+      "id": 10000037,
+      "elem": "cryo",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 9,
+        "e": 4,
+        "q": 8
+      },
+      "weapon": {
+        "name": "试作澹月",
+        "level": 90,
+        "promote": 6,
+        "affix": 2
+      },
+      "artis": {
+        "1": {
+          "name": "乐团的晨光",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "def",
+              "value": 7.3
+            },
+            {
+              "key": "atk",
+              "value": 15.2
+            },
+            {
+              "key": "cpct",
+              "value": 10.5
+            },
+            {
+              "key": "cdmg",
+              "value": 6.2
+            }
+          ]
+        },
+        "2": {
+          "name": "琴师的箭羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 14
+            },
+            {
+              "key": "cpct",
+              "value": 10.1
+            },
+            {
+              "key": "atk",
+              "value": 9.3
+            },
+            {
+              "key": "mastery",
+              "value": 16
+            }
+          ]
+        },
+        "3": {
+          "name": "贤智的定期",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atk",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "atkPlus",
+              "value": 47
+            },
+            {
+              "key": "cpct",
+              "value": 3.1
+            },
+            {
+              "key": "cdmg",
+              "value": 21
+            },
+            {
+              "key": "hpPlus",
+              "value": 239
+            }
+          ]
+        },
+        "4": {
+          "name": "吟游者之壶",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cryo",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "hp",
+              "value": 9.3
+            },
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "recharge",
+              "value": 15.5
+            },
+            {
+              "key": "atk",
+              "value": 10.5
+            }
+          ]
+        },
+        "5": {
+          "name": "指挥的礼帽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cpct",
+            "value": 31.1
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 7.8
+            },
+            {
+              "key": "recharge",
+              "value": 11.7
+            },
+            {
+              "key": "atk",
+              "value": 9.3
+            },
+            {
+              "key": "atkPlus",
+              "value": 47
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429277,
+      "_update": 1680613190853,
+      "_talent": 1679059310871
+    },
+    "10000052": {
+      "name": "雷电将军",
+      "id": 10000052,
+      "elem": "electro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 8,
+        "e": 10,
+        "q": 10
+      },
+      "weapon": {
+        "name": "薙草之稻光",
+        "level": 90,
+        "promote": 6,
+        "affix": 1
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 5.4
+            },
+            {
+              "key": "cpct",
+              "value": 10.1
+            },
+            {
+              "key": "defPlus",
+              "value": 44
+            },
+            {
+              "key": "atkPlus",
+              "value": 49
+            }
+          ]
+        },
+        "2": {
+          "name": "切落之羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 47
+            },
+            {
+              "key": "cdmg",
+              "value": 21
+            },
+            {
+              "key": "recharge",
+              "value": 6.5
+            },
+            {
+              "key": "hpPlus",
+              "value": 508
+            }
+          ]
+        },
+        "3": {
+          "name": "雷云之笼",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atk",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 6.2
+            },
+            {
+              "key": "def",
+              "value": 13.1
+            },
+            {
+              "key": "cdmg",
+              "value": 11.7
+            },
+            {
+              "key": "hp",
+              "value": 11.7
+            }
+          ]
+        },
+        "4": {
+          "name": "绯花之壶",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atk",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "hpPlus",
+              "value": 269
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            },
+            {
+              "key": "recharge",
+              "value": 17.5
+            },
+            {
+              "key": "hp",
+              "value": 11.7
+            }
+          ]
+        },
+        "5": {
+          "name": "染血的铁假面",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cpct",
+            "value": 31.1
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 25.7
+            },
+            {
+              "key": "recharge",
+              "value": 11
+            },
+            {
+              "key": "hpPlus",
+              "value": 269
+            },
+            {
+              "key": "defPlus",
+              "value": 39
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429275,
+      "_update": 1680613190853,
+      "_talent": 1679059310872
+    },
+    "10000057": {
+      "name": "荒泷一斗",
+      "id": 10000057,
+      "elem": "geo",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 1,
+      "talent": {
+        "a": 10,
+        "e": 10,
+        "q": 10
+      },
+      "weapon": {
+        "name": "螭骨剑",
+        "level": 90,
+        "promote": 6,
+        "affix": 5
+      },
+      "artis": {
+        "1": {
+          "name": "角斗士的留恋",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "def",
+              "value": 17.5
+            },
+            {
+              "key": "cdmg",
+              "value": 28
+            },
+            {
+              "key": "cpct",
+              "value": 3.5
+            },
+            {
+              "key": "mastery",
+              "value": 21
+            }
+          ]
+        },
+        "2": {
+          "name": "华馆之羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "hpPlus",
+              "value": 209
+            },
+            {
+              "key": "recharge",
+              "value": 11
+            },
+            {
+              "key": "cdmg",
+              "value": 19.4
+            },
+            {
+              "key": "mastery",
+              "value": 68
+            }
+          ]
+        },
+        "3": {
+          "name": "众生之谣",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "def",
+            "value": 58.3
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 19
+            },
+            {
+              "key": "atkPlus",
+              "value": 14
+            },
+            {
+              "key": "cpct",
+              "value": 13.2
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            }
+          ]
+        },
+        "4": {
+          "name": "梦醒之瓢",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "geo",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 19
+            },
+            {
+              "key": "hpPlus",
+              "value": 299
+            },
+            {
+              "key": "cdmg",
+              "value": 6.2
+            },
+            {
+              "key": "hp",
+              "value": 27.4
+            }
+          ]
+        },
+        "5": {
+          "name": "形骸之笠",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "hp",
+              "value": 10.5
+            },
+            {
+              "key": "recharge",
+              "value": 11.7
+            },
+            {
+              "key": "hpPlus",
+              "value": 418
+            },
+            {
+              "key": "cpct",
+              "value": 7
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429274,
+      "_update": 1680613190853,
+      "_talent": 1679059310873
+    },
+    "10000060": {
+      "name": "夜兰",
+      "id": 10000060,
+      "elem": "hydro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 2,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 4,
+        "e": 9,
+        "q": 9
+      },
+      "weapon": {
+        "name": "祭礼弓",
+        "level": 90,
+        "promote": 6,
+        "affix": 3
+      },
+      "artis": {
+        "1": {
+          "name": "明威之镡",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 7.8
+            },
+            {
+              "key": "atkPlus",
+              "value": 19
+            },
+            {
+              "key": "cpct",
+              "value": 17.1
+            },
+            {
+              "key": "defPlus",
+              "value": 21
+            }
+          ]
+        },
+        "2": {
+          "name": "切落之羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "recharge",
+              "value": 11
+            },
+            {
+              "key": "cpct",
+              "value": 6.6
+            },
+            {
+              "key": "mastery",
+              "value": 42
+            },
+            {
+              "key": "cdmg",
+              "value": 10.9
+            }
+          ]
+        },
+        "3": {
+          "name": "雷云之笼",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hp",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "defPlus",
+              "value": 39
+            },
+            {
+              "key": "cdmg",
+              "value": 15.5
+            },
+            {
+              "key": "recharge",
+              "value": 20.7
+            },
+            {
+              "key": "cpct",
+              "value": 3.5
+            }
+          ]
+        },
+        "4": {
+          "name": "真珠之笼",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hydro",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 17.9
+            },
+            {
+              "key": "hp",
+              "value": 4.7
+            },
+            {
+              "key": "hpPlus",
+              "value": 508
+            },
+            {
+              "key": "cpct",
+              "value": 6.6
+            }
+          ]
+        },
+        "5": {
+          "name": "华饰之兜",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "atkPlus",
+              "value": 47
+            },
+            {
+              "key": "recharge",
+              "value": 5.2
+            },
+            {
+              "key": "atk",
+              "value": 10.5
+            },
+            {
+              "key": "mastery",
+              "value": 40
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429277,
+      "_update": 1679059310873,
+      "_talent": 1679059310873
+    },
+    "10000073": {
+      "name": "纳西妲",
+      "id": 10000073,
+      "elem": "dendro",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 1,
+      "talent": {
+        "a": 7,
+        "e": 10,
+        "q": 10
+      },
+      "weapon": {
+        "name": "千夜浮梦",
+        "level": 90,
+        "promote": 6,
+        "affix": 1
+      },
+      "artis": {
+        "1": {
+          "name": "梦中的铁花",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 7
+            },
+            {
+              "key": "cdmg",
+              "value": 5.4
+            },
+            {
+              "key": "recharge",
+              "value": 11
+            },
+            {
+              "key": "atk",
+              "value": 14
+            }
+          ]
+        },
+        "2": {
+          "name": "裁断的翎羽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 13.6
+            },
+            {
+              "key": "cdmg",
+              "value": 5.4
+            },
+            {
+              "key": "defPlus",
+              "value": 19
+            },
+            {
+              "key": "recharge",
+              "value": 9.1
+            }
+          ]
+        },
+        "3": {
+          "name": "终幕的时计",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "mastery",
+            "value": 187
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 5.4
+            },
+            {
+              "key": "defPlus",
+              "value": 63
+            },
+            {
+              "key": "cdmg",
+              "value": 7.8
+            },
+            {
+              "key": "hp",
+              "value": 15.7
+            }
+          ]
+        },
+        "4": {
+          "name": "迷醉长梦的守护",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "mastery",
+            "value": 187
+          },
+          "attrs": [
+            {
+              "key": "atkPlus",
+              "value": 49
+            },
+            {
+              "key": "hpPlus",
+              "value": 299
+            },
+            {
+              "key": "cpct",
+              "value": 6.2
+            },
+            {
+              "key": "def",
+              "value": 10.9
+            }
+          ]
+        },
+        "5": {
+          "name": "指挥的礼帽",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "mastery",
+              "value": 16
+            },
+            {
+              "key": "atkPlus",
+              "value": 53
+            },
+            {
+              "key": "recharge",
+              "value": 16.8
+            },
+            {
+              "key": "hp",
+              "value": 4.1
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429276,
+      "_update": 1680613190853,
+      "_talent": 1679059310874
+    },
+    "10000075": {
+      "name": "流浪者",
+      "id": 10000075,
+      "elem": "anemo",
+      "level": 90,
+      "promote": 6,
+      "fetter": 10,
+      "costume": 0,
+      "cons": 0,
+      "talent": {
+        "a": 9,
+        "e": 9,
+        "q": 9
+      },
+      "weapon": {
+        "name": "流浪乐章",
+        "level": 90,
+        "promote": 6,
+        "affix": 4
+      },
+      "artis": {
+        "1": {
+          "name": "众王之都的开端",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "hpPlus",
+            "value": 4780
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 33.4
+            },
+            {
+              "key": "atk",
+              "value": 4.7
+            },
+            {
+              "key": "cpct",
+              "value": 3.9
+            },
+            {
+              "key": "hp",
+              "value": 4.7
+            }
+          ]
+        },
+        "2": {
+          "name": "黄金邦国的结末",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atkPlus",
+            "value": 311
+          },
+          "attrs": [
+            {
+              "key": "cdmg",
+              "value": 19.4
+            },
+            {
+              "key": "hp",
+              "value": 5.8
+            },
+            {
+              "key": "defPlus",
+              "value": 16
+            },
+            {
+              "key": "cpct",
+              "value": 9.3
+            }
+          ]
+        },
+        "3": {
+          "name": "失落迷途的机芯",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atk",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "hp",
+              "value": 4.7
+            },
+            {
+              "key": "cpct",
+              "value": 5.8
+            },
+            {
+              "key": "cdmg",
+              "value": 35.7
+            },
+            {
+              "key": "defPlus",
+              "value": 21
+            }
+          ]
+        },
+        "4": {
+          "name": "迷醉长梦的守护",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "atk",
+            "value": 46.6
+          },
+          "attrs": [
+            {
+              "key": "hp",
+              "value": 14
+            },
+            {
+              "key": "def",
+              "value": 12.4
+            },
+            {
+              "key": "cdmg",
+              "value": 13.2
+            },
+            {
+              "key": "cpct",
+              "value": 3.5
+            }
+          ]
+        },
+        "5": {
+          "name": "角斗士的凯旋",
+          "level": 20,
+          "star": 5,
+          "main": {
+            "key": "cdmg",
+            "value": 62.2
+          },
+          "attrs": [
+            {
+              "key": "cpct",
+              "value": 9.3
+            },
+            {
+              "key": "hpPlus",
+              "value": 269
+            },
+            {
+              "key": "hp",
+              "value": 14.6
+            },
+            {
+              "key": "atkPlus",
+              "value": 16
+            }
+          ]
+        }
+      },
+      "_source": "enka",
+      "_time": 1677322429276,
+      "_update": 1680613190853,
+      "_talent": 1679059310875
+    }
+  }
+}
